@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provão Paulista · 2ª série · aulas por dia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --blue: #2563eb;
+      --bg: #f3f6fb;
+      --line: #dde4f0
+    }
+
+    body {
+      font-family: Manrope, sans-serif;
+      background: var(--bg);
+      color: #1c2b44;
+      line-height: 1.7
+    }
+
+    .top {
+      background: linear-gradient(120deg, var(--navy), #16407a);
+      color: #fff;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 30
+    }
+
+    .top b {
+      font-weight: 800;
+      font-size: 1.15rem
+    }
+
+    .top small {
+      opacity: .75
+    }
+
+    .side {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: .8rem;
+      position: sticky;
+      top: 78px;
+      max-height: calc(100vh - 96px);
+      overflow: auto
+    }
+
+    .sg {
+      font-weight: 800;
+      font-size: .8rem;
+      color: #5b6b86;
+      margin: .9rem .4rem .3rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem
+    }
+
+    .sg i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--c)
+    }
+
+    .lk {
+      display: flex;
+      justify-content: space-between;
+      padding: .35rem .6rem;
+      border-radius: 8px;
+      color: #1c2b44;
+      text-decoration: none;
+      font-size: .93rem;
+      font-weight: 500
+    }
+
+    .lk:hover {
+      background: #eaf0fb
+    }
+
+    .lk.on {
+      background: var(--blue);
+      color: #fff
+    }
+
+    .lk span {
+      font-size: .78rem;
+      font-weight: 800
+    }
+
+    .card-l {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: clamp(1.2rem, 3vw, 2.4rem);
+      box-shadow: 0 8px 28px rgba(11, 31, 58, .06)
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--c);
+      color: #fff;
+      border-radius: 50rem;
+      padding: .1rem .8rem;
+      font-size: .82rem;
+      font-weight: 700
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin: .6rem 0 1rem
+    }
+
+    h2 {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-top: 1.8rem;
+      padding-left: .7rem;
+      border-left: 5px solid var(--c)
+    }
+
+    .f {
+      background: #eef4ff;
+      border: 1px solid #c9dafc;
+      border-radius: 10px;
+      padding: .6rem 1rem;
+      margin: .7rem 0;
+      font-weight: 700;
+      color: #12326b;
+      overflow-x: auto
+    }
+
+    .ok {
+      background: #ecfdf3;
+      border-left: 5px solid #16a34a;
+      padding: .6rem 1rem;
+      border-radius: 8px;
+      margin: .8rem 0
+    }
+
+    .wr {
+      background: #fff7e6;
+      border-left: 5px solid #f59e0b;
+      padding: .6rem 1rem;
+      border-radius: 8px;
+      margin: .8rem 0
+    }
+
+    .gg {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0
+    }
+
+    .gc {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fbfcff
+    }
+
+    .gc h3 {
+      font-size: 1.05rem;
+      font-weight: 800
+    }
+
+    .gc p {
+      font-size: .9rem;
+      margin: 0;
+      font-weight: 600
+    }
+
+    svg.fig {
+      width: 100%;
+      max-height: 150px;
+      fill: none;
+      stroke: #12326b;
+      stroke-width: 2;
+      stroke-linejoin: round
+    }
+
+    svg.fig text {
+      fill: #b4351b;
+      stroke: none;
+      font: 700 11px Manrope
+    }
+
+    svg.fig .d {
+      stroke-dasharray: 4 3;
+      stroke: #b4351b
+    }
+
+    svg.fig .fl {
+      fill: #dbe8ff
+    }
+
+    .qz {
+      margin-top: 2.2rem;
+      border-top: 3px solid var(--navy);
+      padding-top: 1.2rem
+    }
+
+    .qq {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem;
+      margin: .8rem 0
+    }
+
+    .op {
+      display: block;
+      padding: .4rem .7rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: .3rem 0;
+      cursor: pointer
+    }
+
+    .op:hover {
+      background: #eef4ff
+    }
+
+    .op.g {
+      background: #dcfce7;
+      border-color: #16a34a
+    }
+
+    .op.b {
+      background: #fee2e2;
+      border-color: #dc2626
+    }
+
+    .ex {
+      font-size: .93rem;
+      margin-top: .5rem;
+      color: #334766
+    }
+
+    .btn-b {
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      border: 0;
+      border-radius: 10px;
+      padding: .6rem 1.4rem
+    }
+
+    .btn-b:hover {
+      background: #1d4ed8;
+      color: #fff
+    }
+
+    .btn-o {
+      border: 2px solid var(--navy);
+      color: var(--navy);
+      font-weight: 700;
+      border-radius: 10px;
+      background: #fff;
+      padding: .5rem 1.2rem
+    }
+
+    :focus-visible {
+      outline: 3px solid #f59e0b;
+      outline-offset: 2px
+    }
+
+    @media(max-width:991px) {
+      .side {
+        position: static;
+        max-height: 320px
+      }
+
+      .top {
+        position: static
+      }
+    }
+
+    .op input {
+      margin-right: .45rem
+    }
+
+    .qz .qq p {
+      margin-bottom: .65rem
+    }
+
+    :root {
+      --bg: #f4f7fc;
+      --surface: #fff;
+      --surface2: #f7f9fd;
+      --ink: #17243b;
+      --muted: #71809a;
+      --line: #e3e9f2;
+      --navy: #102846;
+      --accent: #3568dc;
+      --shadow: 0 14px 40px rgba(20, 39, 68, .07)
+    }
+
+    body {
+      font-family: Manrope, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      margin: 0
+    }
+
+    .topbar {
+      height: auto;
+      min-height: 76px;
+      background: linear-gradient(105deg, #0b1b31, #173e70);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px clamp(18px, 4vw, 58px);
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 5px 22px #0a1d3522
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 225px
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: #ffffff18;
+      border: 1px solid #ffffff30;
+      font-weight: 800;
+      font-size: 20px
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -.3px
+    }
+
+    .brand small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      color: #b7c8df
+    }
+
+    .day-tabs {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px;
+      background: #ffffff12;
+      border: 1px solid #ffffff20;
+      border-radius: 13px
+    }
+
+    .tab {
+      border: 0;
+      background: transparent;
+      color: #d5e0ef;
+      border-radius: 9px;
+      padding: 9px 15px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap
+    }
+
+    .tab small {
+      display: block;
+      font-size: 9px;
+      font-weight: 600;
+      opacity: .72
+    }
+
+    .tab.active {
+      background: #fff;
+      color: #17365d;
+      box-shadow: 0 3px 10px #0002
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 150px;
+      justify-content: flex-end
+    }
+
+    .top-actions #pr {
+      font-size: 11px;
+      color: #c5d3e6
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid #ffffff30;
+      background: #ffffff12;
+      color: white;
+      font-size: 18px;
+      cursor: pointer
+    }
+
+    .shell {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 34px clamp(16px, 3vw, 44px);
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start
+    }
+
+    .right-rail {
+      grid-column: 1;
+      grid-row: 1
+    }
+
+    .main-area {
+      grid-column: 2;
+      grid-row: 1
+    }
+
+    .main-area {
+      min-width: 0
+    }
+
+    .intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 0 22px
+    }
+
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 1.6px;
+      font-weight: 800;
+      color: var(--accent)
+    }
+
+    .intro h1 {
+      font-size: clamp(25px, 3vw, 34px);
+      letter-spacing: -1.1px;
+      line-height: 1.2;
+      margin: 5px 0 8px;
+      color: var(--ink)
+    }
+
+    .intro p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .intro>a {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+      padding-bottom: 5px
+    }
+
+    .lesson-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(20px, 3vw, 38px);
+      box-shadow: var(--shadow);
+      min-height: 330px
+    }
+
+    .right-rail {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      padding: 19px;
+      position: sticky;
+      top: 98px;
+      max-height: calc(100vh - 120px);
+      overflow: auto;
+      box-shadow: var(--shadow)
+    }
+
+    .rail-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .rail-head h2 {
+      font-size: 17px;
+      margin: 3px 0 0;
+      color: var(--ink)
+    }
+
+    .edit-courses {
+      border: 1px solid var(--line);
+      background: var(--surface2);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 8px
+    }
+
+    .course-summary {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 12px 0 19px;
+      padding: 10px 11px;
+      background: var(--surface2);
+      border-radius: 10px
+    }
+
+    .priority-label {
+      font-size: 9px;
+      letter-spacing: 1.3px;
+      font-weight: 800;
+      color: var(--muted);
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .subject-list {
+      padding-top: 7px
+    }
+
+    .subject-group {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .subject-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border: 0;
+      background: transparent;
+      padding: 12px 3px;
+      color: var(--ink);
+      text-align: left;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer
+    }
+
+    .subject-toggle .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex: none
+    }
+
+    .subject-toggle .count {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 11px
+    }
+
+    .subject-toggle .chev {
+      color: var(--muted);
+      transition: transform .2s
+    }
+
+    .subject-group.open .chev {
+      transform: rotate(180deg)
+    }
+
+    .subject-lessons {
+      display: none;
+      padding: 0 0 8px 17px
+    }
+
+    .subject-group.open .subject-lessons {
+      display: block
+    }
+
+    .subject-link {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 7px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 1.5
+    }
+
+    .subject-link:hover,
+    .subject-link.current {
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent)
+    }
+
+    .rail-note {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+      padding-top: 15px;
+      margin-top: 12px;
+      border-top: 1px solid var(--line)
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--c);
+      color: white;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 10px;
+      font-weight: 800
+    }
+
+    .lesson-card h1 {
+      font-size: clamp(25px, 3vw, 34px);
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: -.8px;
+      margin: 14px 0 20px
+    }
+
+    .lesson-card h2 {
+      font-size: 19px;
+      color: var(--ink);
+      font-weight: 800;
+      margin: 27px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--c)
+    }
+
+    .lesson-card p {
+      color: var(--ink);
+      font-size: 15px
+    }
+
+    .f,
+    .ok,
+    .wr,
+    .gc,
+    .qq {
+      border-radius: 11px
+    }
+
+    .f {
+      background: var(--surface2);
+      border: 1px solid var(--line);
+      padding: 13px 16px;
+      margin: 14px 0;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.8;
+      overflow-x: auto
+    }
+
+    .ok {
+      background: #eaf8f0;
+      color: #17603b;
+      border-left: 4px solid #20a568;
+      padding: 12px 15px
+    }
+
+    .wr {
+      background: #fff5e5;
+      color: #805315;
+      border-left: 4px solid #e9a23b;
+      padding: 12px 15px
+    }
+
+    .qz {
+      margin-top: 34px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px
+    }
+
+    .qq {
+      background: var(--surface2);
+      border: 1px solid var(--line);
+      padding: 15px;
+      margin: 12px 0
+    }
+
+    .op {
+      display: block;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 6px 0;
+      cursor: pointer;
+      color: var(--ink);
+      font-size: 13px
+    }
+
+    .op:hover {
+      background: color-mix(in srgb, var(--accent) 8%, var(--surface))
+    }
+
+    .op.g {
+      background: #dcfce7;
+      border-color: #16a34a
+    }
+
+    .op.b {
+      background: #fee2e2;
+      border-color: #dc2626
+    }
+
+    .ex {
+      font-size: 12px;
+      margin-top: 8px;
+      color: var(--muted)
+    }
+
+    .btn-b,
+    .primary-btn {
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      border: 0;
+      border-radius: 9px;
+      padding: 10px 17px
+    }
+
+    .btn-o {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-weight: 700;
+      border-radius: 9px;
+      background: var(--surface);
+      padding: 9px 15px;
+      text-decoration: none
+    }
+
+    .lesson-card .badge {
+      background: var(--surface2) !important;
+      color: var(--muted) !important;
+      border: 1px solid var(--line) !important
+    }
+
+    .loading {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .onboarding {
+      position: fixed;
+      inset: 0;
+      background: #08182bd9;
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px
+    }
+
+    .onboarding.show {
+      display: flex
+    }
+
+    .modal-card {
+      width: min(700px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(22px, 4vw, 38px);
+      box-shadow: 0 30px 100px #0005
+    }
+
+    .modal-kicker {
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      color: var(--accent)
+    }
+
+    .modal-card h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+      margin: 7px 0
+    }
+
+    .modal-card>p {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 22px
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px
+    }
+
+    .course-option {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--surface2);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .course-option:has(input:checked) {
+      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 9%, var(--surface))
+    }
+
+    .course-option input {
+      accent-color: var(--accent)
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 23px
+    }
+
+    .modal-footer span {
+      font-size: 10px;
+      color: var(--muted)
+    }
+
+    :focus-visible {
+      outline: 3px solid #e9a23b;
+      outline-offset: 3px
+    }
+
+    .gc {
+      background: var(--surface2) !important;
+      color: var(--ink)
+    }
+
+    .gc h3,
+    .gc p {
+      color: var(--ink) !important
+    }
+
+    .gc p {
+      font-weight: 700;
+      line-height: 1.8
+    }
+
+    .gc svg.fig text {
+      fill: #9f2d1d !important
+    }
+
+    body.dark {
+      --bg: #0b1220;
+      --surface: #131e30;
+      --surface2: #1a2940;
+      --ink: #e6edf7;
+      --muted: #9aabc2;
+      --line: #2a3a52;
+      --navy: #e6edf7;
+      --shadow: 0 14px 40px #0003;
+      color-scheme: dark
+    }
+
+    .dark .topbar {
+      background: linear-gradient(105deg, #070d18, #101e33)
+    }
+
+    .dark .intro>a {
+      color: #8fb4ff
+    }
+
+    .dark .eyebrow {
+      color: #8fb4ff
+    }
+
+    .dark .tab.active {
+      background: #dce8fb;
+      color: #132a49
+    }
+
+    .dark .btn-o {
+      background: var(--surface);
+      color: var(--ink)
+    }
+
+    .dark .wr {
+      background: #382c18;
+      color: #f4d39a
+    }
+
+    .dark .ok {
+      background: #153629;
+      color: #a5e4bf
+    }
+
+    .dark .op.g {
+      background: #153629;
+      color: #b5efca
+    }
+
+    .dark .op.b {
+      background: #421f2a;
+      color: #ffc0c7
+    }
+
+    .dark .course-option:has(input:checked) {
+      background: #203b61
+    }
+
+    .dark .lesson-card .badge {
+      background: #1a2940 !important;
+      color: #b4c3d9 !important
+    }
+
+    @media(max-width:1050px) {
+      .shell {
+        grid-template-columns: 290px minmax(0, 1fr);
+        gap: 17px
+      }
+
+      .brand {
+        min-width: 180px
+      }
+
+      .topbar {
+        padding-inline: 18px
+      }
+
+      .tab {
+        padding: 8px 10px
+      }
+    }
+
+    @media(max-width:800px) {
+      .topbar {
+        position: static;
+        flex-wrap: wrap;
+        gap: 10px
+      }
+
+      .brand {
+        min-width: 0;
+        flex: 1
+      }
+
+      .top-actions {
+        min-width: 0
+      }
+
+      .day-tabs {
+        order: 3;
+        width: 100%;
+        justify-content: stretch
+      }
+
+      .tab {
+        flex: 1
+      }
+
+      .shell {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 14px
+      }
+
+      .main-area {
+        width: 100%;
+        order: 1
+      }
+
+      .right-rail {
+        position: static;
+        width: 100%;
+        max-height: none;
+        order: 2
+      }
+
+      .intro {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:430px) {
+      .brand small {
+        font-size: 8px
+      }
+
+      .top-actions #pr {
+        display: none
+      }
+
+      .tab {
+        font-size: 10px;
+        padding: 8px 5px
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr
+      }
+
+      .modal-footer {
+        align-items: flex-start;
+        flex-direction: column
+      }
+
+      .modal-footer .primary-btn {
+        width: 100%
+      }
+    }
+
+
+    .practical,
+    .symbols {
+      margin: 22px 0;
+      padding: 15px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface2)
+    }
+
+    .practical h2,
+    .symbols h2 {
+      margin-top: 0
+    }
+
+    .practical li {
+      margin: 8px 0
+    }
+
+    .symbols p {
+      margin-bottom: 0
+    }
+
+    .frac {
+      display: inline-flex;
+      vertical-align: middle;
+      flex-direction: column;
+      text-align: center;
+      line-height: 1.15;
+      margin: 0 .12em;
+      font-weight: 700
+    }
+
+    .frac>span:first-child {
+      border-bottom: 1px solid currentColor;
+      padding: 0 .18em .08em
+    }
+
+    .frac>span:last-child {
+      padding: .08em .18em 0
+    }
+
+    .subject-link.done{color:#15803d;background:#ecfdf3;font-weight:700}
+    .subject-link.done::before{content:"✓ ";font-weight:800}
+    .subject-link.done.current{background:#16a34a;color:#fff}
+    .subject-toggle.alldone{color:#15803d}
+    .dark .subject-link.done{background:#12361f;color:#86efac}
+    .dark .subject-toggle.alldone{color:#86efac}
+    .done-badge{display:inline-block;background:#dcfce7;color:#166534;border:1px solid #16a34a;border-radius:50rem;padding:.1rem .8rem;font-size:.82rem;font-weight:800}
+    .dark .done-badge{background:#12361f;color:#86efac}
+    .semi{list-style:none;padding:0;margin:.9rem 0;display:grid;gap:.55rem}
+    .semi li{padding:.65rem .95rem;border:1px solid var(--line);border-left:5px solid var(--c,var(--accent));border-radius:10px;background:var(--surface2);line-height:1.6}
+    .semi li b.t{color:var(--c,var(--accent));font-weight:800}
+    .explain{margin:22px 0;padding:15px 18px;border-radius:12px;background:#fff8e1;border:1px solid #f5d77a}
+    .explain h2{margin-top:0;border:0;padding:0;font-size:1.1rem}
+    .dark .explain{background:#2a2410;border-color:#6b5a1c}
+    .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.5rem}
+    .legend div{display:flex;gap:.65rem;align-items:baseline;padding:.45rem .7rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:.92rem}
+    .legend b{flex:none;min-width:2.3rem;text-align:center;background:var(--accent);color:#fff;border-radius:8px;padding:0 .45rem}
+    .final{margin-top:1.5rem;padding:1.4rem;border-radius:16px;background:linear-gradient(120deg,#0b1b31,#173e70);color:#fff}
+    .final.all{background:linear-gradient(120deg,#14532d,#16a34a)}
+    .final .fh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-weight:800;font-size:1.1rem}
+    .final .fh small{opacity:.8;font-weight:600}
+    .final .fn{margin:.6rem 0 1rem;font-size:1.05rem}
+    .final .fn b{font-size:2.6rem;line-height:1}
+    .final .fn em{font-style:normal;background:rgba(255,255,255,.2);border-radius:50rem;padding:.1rem .7rem;font-weight:800;margin-left:.4rem}
+    .final .fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem 1.2rem}
+    .final .fs{display:flex;justify-content:space-between;font-size:.85rem;font-weight:700;margin-bottom:.2rem}
+    .final .bar{height:8px;background:rgba(255,255,255,.22);border-radius:9px}
+    .final .bar i{display:block;height:100%;border-radius:9px;background:#fff;box-shadow:0 0 0 1px var(--c) inset}
+
+    .xgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.7rem;margin:.8rem 0}
+    .xgrid label{font-weight:700;font-size:.88rem}
+    .xcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.7rem}
+    .xc{border:1px solid var(--line);border-radius:12px;padding:.8rem;display:flex;flex-direction:column;gap:.2rem;font-size:.92rem}
+    .ok2{background:#ecfdf3;border-color:#16a34a}.no2{background:#fef2f2;border-color:#dc2626}
+    .dark .ok2{background:#12361f}.dark .no2{background:#3b1414}
+    #userModal{z-index:2000}
+  </style>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">P</span>
+      <div><strong>Provão Paulista</strong><small>PLATAFORMA DE PREPARAÇÃO · 2ª SÉRIE</small></div>
+    </div>
+    <nav class="day-tabs" aria-label="Visualização do conteúdo">
+      <button class="tab active" data-mode="all">Conteúdo completo</button>
+      <button class="tab" data-mode="10">Dia 10 <small>10/11</small></button>
+      <button class="tab" data-mode="11">Dia 11 <small>11/11</small></button>
+      <button class="tab" data-view="notas">📝 Notas</button><button class="tab" data-view="mega">🏆 Mega Quiz</button><button class="tab" data-view="rank">🏅 Ranking</button>
+    </nav>
+    <div class="top-actions"><span id="pr"></span><button class="icon-btn" id="uChip" style="width:auto;padding:0 .8rem"></button><button class="icon-btn" id="themeToggle"
+        aria-label="Alternar tema">☾</button></div>
+  </header>
+  <div class="shell">
+    <main class="main-area">
+      <div class="intro">
+        <div><span class="eyebrow">SEU PLANO DE ESTUDOS</span>
+          <h1 id="pageTitle">Conteúdo completo</h1>
+          <p id="pageDesc">Todas as disciplinas e aulas da 2ª série, reunidas em uma única trilha.</p>
+        </div><a href="https://provaopaulistaseriado.vunesp.com.br/" target="_blank" rel="noopener">Portal oficial ↗</a>
+      </div>
+      <article class="lesson-card" id="m">
+        <div class="loading">Carregando conteúdo…</div>
+      </article>
+      <section class="final" id="final"></section>
+      <section class="lesson-card" id="xv" style="display:none"></section>
+    </main>
+    <aside class="right-rail">
+      <div class="rail-head">
+        <div><span class="eyebrow">PERSONALIZAÇÃO</span>
+          <h2>Seu objetivo</h2>
+        </div><button class="edit-courses" id="editCourses">Editar</button>
+      </div>
+      <div class="course-summary" id="courseSummary">Selecione seus cursos para ordenar as disciplinas.</div>
+      <div class="priority-label">DISCIPLINAS POR PRIORIDADE</div>
+      <nav id="nav" class="subject-list"></nav>
+      <div class="rail-note">A ordem é uma recomendação de estudo baseada nos cursos escolhidos. Ela não altera os pesos
+        oficiais da prova.</div>
+    </aside>
+  </div>
+  <div class="onboarding" id="courseModal" aria-modal="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-kicker">CONFIGURAÇÃO INICIAL</div>
+      <h2 id="modalTitle">Quais cursos você pretende fazer?</h2>
+      <p>Escolha um ou mais cursos. Vamos organizar as disciplinas do Provão por relevância para suas áreas de
+        interesse. Você poderá alterar isso depois.</p>
+      <div class="course-grid" id="courseChoices"></div>
+      <div class="modal-footer"><span>Selecione pelo menos um curso.</span><button class="primary-btn"
+          id="saveCourses">Montar meu plano <span>→</span></button></div>
+    </div>
+  </div>
+  <script>
+    const R = (a, b) => a + Math.floor(Math.random() * (b - a + 1)), P = a => a[R(0, a.length - 1)], r2 = x => +(+x).toFixed(2);
+    const sh = a => a.map(x => [Math.random(), x]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
+    const N = (t, a, e, u = '') => {a = r2(a); let o = [a]; for (const x of [a * 2, a / 2, -a, a + 10, a - 10, a * 3, a + 1, a + 5, a * 1.5].map(r2)) if (x !== 0 && !o.includes(x) && o.length < 5) o.push(x); return {t, o: o.map(x => x + u), a: a + u, e}};
+    const T = (t, a, w, e) => ({t, o: [a, ...w, 'Não é possível concluir com os dados apresentados'], a, e});
+    const S = c => `<svg class="fig" viewBox="0 0 120 100">${c}</svg>`;
+    const FG = {
+      prisma: S('<path class="fl" d="M20 40h50v40H20z"/><path d="M20 40l20-15h50L70 40M90 25v40L70 80"/><path class="d" d="M40 25v40h50M40 65L20 80"/><text x="40" y="92">a</text><text x="96" y="55">b</text><text x="4" y="62">h</text>'),
+      cil: S('<ellipse class="fl" cx="60" cy="22" rx="30" ry="9"/><path d="M30 22v56M90 22v56M30 78a30 9 0 0 0 60 0"/><path class="d" d="M60 22h30"/><text x="68" y="19">r</text><text x="94" y="52">h</text>'),
+      cone: S('<ellipse class="fl" cx="60" cy="80" rx="32" ry="9"/><path d="M28 80L60 10l32 70"/><path class="d" d="M60 10v70h32"/><text x="64" y="50">h</text><text x="72" y="76">r</text><text x="30" y="40">g</text>'),
+      pir: S('<path class="fl" d="M22 78l45 0 28-14H50z"/><path d="M60 10L22 78M60 10l35 54M60 10L67 78"/><path class="d" d="M60 10v60M50 64L22 78"/><text x="64" y="45">h</text>'),
+      esf: S('<circle class="fl" cx="60" cy="50" r="38"/><ellipse cx="60" cy="50" rx="38" ry="11"/><path class="d" d="M60 50h38"/><text x="74" y="46">r</text>'),
+      tri: S('<path class="fl" d="M15 85h85V25z"/><path d="M88 85v-9h12"/><text x="50" y="97">cateto adjacente</text><text x="70" y="52">oposto</text><text x="34" y="52">hip.</text><text x="26" y="80">θ</text>')
+    };
+    const GEO = [['prisma', 'Prisma e cubo', 'Ab = a·b<br>At = 2(ab + ah + bh)<br>V = a·b·h<br>Cubo: V = a³, At = 6a²'], ['cil', 'Cilindro', 'Ab = πr²  ·  Al = 2πrh<br>At = 2πr(r + h)<br>V = πr²h'], ['cone', 'Cone', 'g² = r² + h²<br>Al = πrg  ·  At = πr(r + g)<br>V = πr²h / 3'], ['pir', 'Pirâmide', 'V = Ab·h / 3<br>Al = soma dos triângulos<br>At = Ab + Al'], ['esf', 'Esfera', 'A = 4πr²<br>V = 4πr³ / 3']];
+    const geoH = () => '<div class="gg">' + GEO.map(g => `<div class="gc"><h3>${g[1]}</h3>${FG[g[0]]}<p>${g[2]}</p></div>`).join('') + '</div>';
+    const subs = {mat: ['Matemática', '#2563eb'], fis: ['Física', '#7c3aed'], qui: ['Química', '#ea580c'], bio: ['Biologia', '#16a34a'], his: ['História', '#92400e'], geo: ['Geografia', '#0891b2'], soc: ['Sociologia', '#be185d'], por: ['Português', '#dc2626'], ing: ['Inglês', '#0d9488'], fil: ['Filosofia', '#64748b']};
+    const L = [
+      {
+        s: 'mat', t: 'Geometria espacial', h: `<p>Geometria espacial estuda figuras que ocupam espaço: tem comprimento, largura e altura. Duas medidas importam: <b>área</b> (a “casca”, quanto papel para embrulhar) e <b>volume</b> (o “recheio”, quanto cabe dentro).</p>
+<h2>As 5 figuras e suas fórmulas</h2>${geoH()}
+<div class="ok"><b>Dica:</b> cone e pirâmide são o “terço” do cilindro e do prisma de mesma base e altura. Por isso aparece o ÷3.</div>
+<h2>Siglas</h2><p><b>Ab</b> = área da base · <b>Al</b> = área lateral · <b>At</b> = área total (Ab·2 + Al nos prismas e cilindros) · <b>g</b> = geratriz (a “lateral inclinada” do cone).</p>
+<h2>Capacidade e vistas</h2><div class="f">1 dm³ = 1 litro · 1 m³ = 1000 litros · 1 cm³ = 1 mL</div><p>Vistas ortogonais são “fotos” de frente, de cima e de lado. Um cilindro visto de cima é um círculo e visto de frente é um retângulo.</p>
+<div class="wr"><b>Cuidado:</b> converta tudo para a mesma unidade antes de calcular.</div>`,
+        q: () => {let a = R(2, 6), r = R(2, 5), h = R(3, 8), b = R(2, 6); return [N(`Um cubo tem aresta ${a} cm. Qual o volume (cm³)?`, a ** 3, `V = a³ = ${a}³`), N(`Cilindro com raio ${r} e altura ${h}. Use π = 3. Qual o volume?`, 3 * r * r * h, `V = πr²h = 3·${r}²·${h}`), N(`Cone com raio ${r} e altura ${h}. Use π = 3. Qual o volume?`, r * r * h, `V = πr²h/3 = 3·${r * r}·${h}/3`), N(`Esfera de raio ${r}. Use π = 3. Qual a área da superfície?`, 12 * r * r, `A = 4πr² = 4·3·${r}²`)]}
+      },
+      {
+        s: 'mat', t: 'PA e PG', h: `<p>Sequência é uma lista de números em ordem. Duas são famosas.</p><h2>PA (Progressão Aritmética)</h2><p>Soma <b>sempre o mesmo número</b> (a razão r). Ex.: 3, 7, 11, 15 (r = 4).</p><div class="f">aₙ = a₁ + (n − 1)·r<br>Sₙ = n·(a₁ + aₙ) / 2</div>
+<h2>PG (Progressão Geométrica)</h2><p>Multiplica <b>sempre pelo mesmo número</b> (a razão q). Ex.: 2, 6, 18 (q = 3).</p><div class="f">aₙ = a₁ · qⁿ⁻¹<br>Soma finita: Sₙ = a₁(qⁿ − 1)/(q − 1)</div>
+<div class="ok"><b>Dica:</b> a PA cresce em linha reta (função do 1º grau); a PG explode (exponencial).</div>`,
+        q: () => {let a = R(2, 9), r = R(2, 6), n = R(8, 12), g = R(1, 4), q = R(2, 3), m = R(4, 6); return [N(`PA com a₁ = ${a} e razão ${r}. Qual o ${n}º termo?`, a + (n - 1) * r, `aₙ = ${a} + ${n - 1}·${r}`), N(`PA: ${a}, ${a + r}, ${a + 2 * r}… Quanto vale a soma dos ${n} primeiros termos?`, n * (2 * a + (n - 1) * r) / 2, `a${n} = ${a + (n - 1) * r}; S = ${n}·(${a}+${a + (n - 1) * r})/2`), N(`PG com a₁ = ${g} e razão ${q}. Qual o ${m}º termo?`, g * q ** (m - 1), `aₙ = ${g}·${q}^${m - 1}`), N(`Uma bactéria dobra a cada hora. Começando com ${g} bactéria, quantas existem após ${m} horas?`, g * 2 ** m, `${g}·2^${m}`)]}
+      },
+      {
+        s: 'mat', t: 'Análise combinatória', h: `<p>É a arte de contar sem listar tudo.</p><h2>Princípio multiplicativo</h2><p>Se uma escolha tem <b>m</b> jeitos e outra tem <b>n</b>, juntas dão <b>m × n</b>. Com 3 camisas e 2 calças: 6 looks.</p>
+<h2>Fatorial</h2><div class="f">n! = n·(n−1)·…·2·1 · Ex.: 4! = 24</div>
+<h2>Permutação, arranjo e combinação</h2><div class="f">Permutação (ordenar n itens): Pₙ = n!<br>Arranjo (a ordem importa): A(n,p) = n!/(n−p)!<br>Combinação (a ordem NÃO importa): C(n,p) = n!/[p!(n−p)!]</div>
+<div class="ok"><b>Pergunta de ouro:</b> trocar a ordem muda o resultado? Sim → arranjo. Não → combinação.<br>Pódio (1º, 2º, 3º) é arranjo; time de 3 pessoas é combinação.</div>`,
+        q: () => {let a = R(2, 5), b = R(2, 5), c = R(2, 4), n = R(4, 6), m = R(5, 10), k = R(5, 8); return [N(`${a} camisas, ${b} calças e ${c} pares de sapato. Quantos looks completos?`, a * b * c, `${a}·${b}·${c}`), N(`De quantas maneiras ${n} pessoas diferentes formam uma fila?`, [1, 1, 2, 6, 24, 120, 720][n], `${n}!`), N(`${m} amigos trocam um aperto de mão cada par, uma vez. Quantos apertos?`, m * (m - 1) / 2, `C(${m},2)=${m}·${m - 1}/2`), N(`${k} atletas disputam um pódio (1º, 2º e 3º). Quantos pódios possíveis?`, k * (k - 1) * (k - 2), `A(${k},3)=${k}·${k - 1}·${k - 2}`)]}
+      },
+      {
+        s: 'mat', t: 'Funções: 1º grau, exponencial e log', h: `<h2>Função do 1º grau</h2><div class="f">f(x) = ax + b</div><p><b>a</b> = quanto y muda quando x sobe 1 (inclinação). <b>b</b> = valor inicial (onde corta o eixo y). O gráfico é uma reta. Se a &gt; 0 sobe, se a &lt; 0 desce. A raiz é onde f(x) = 0: x = −b/a.</p><p>Exemplo: táxi com bandeirada R$ 5 e R$ 2 por km → f(x) = 2x + 5.</p>
+<h2>Função exponencial</h2><div class="f">f(x) = a·bˣ (b &gt; 0, b ≠ 1)</div><p>O x fica no expoente. Se b &gt; 1 cresce (juros compostos, populações); se 0 &lt; b &lt; 1 diminui (decaimento).</p>
+<h2>Logaritmo</h2><div class="f">log_b(N) = x ⇔ bˣ = N</div><p>Pergunta: “a que expoente elevo b para chegar a N?” Ex.: log₂ 32 = 5, pois 2⁵ = 32. <b>log(ab) = log a + log b</b> e <b>log(aᵏ) = k·log a</b>.</p>`,
+        q: () => {let a = R(2, 6), b = R(1, 9), x = R(2, 9), p = R(100, 500), t = R(2, 5), k = R(2, 7); return [N(`f(x) = ${a}x + ${b}. Quanto vale f(${x})?`, a * x + b, `${a}·${x}+${b}`), N(`Táxi: bandeirada R$ ${b + 3} e R$ ${a} por km. Quanto custa uma corrida de ${x} km?`, b + 3 + a * x, `${a}·${x}+${b + 3}`), N(`Uma população de ${p} dobra a cada hora. Quantos indivíduos após ${t} horas?`, p * 2 ** t, `${p}·2^${t}`), N(`Calcule log₂ ${2 ** k}.`, k, `2^${k}=${2 ** k}`)]}
+      },
+      {
+        s: 'mat', t: 'Trigonometria', h: `<p>Estuda triângulos e ângulos. Num triângulo <b>retângulo</b> (com ângulo de 90°), olhe a partir do ângulo θ:</p><div class="gc" style="max-width:340px">${FG.tri}</div>
+<div class="f">sen θ = oposto / hipotenusa<br>cos θ = adjacente / hipotenusa<br>tg θ = oposto / adjacente</div><p>Macete: <b>SOH-CAH-TOA</b>.</p><h2>Pitágoras</h2><div class="f">hip² = cat² + cat²</div>
+<h2>Ângulos notáveis</h2><table class="table"><tr><th></th><th>30°</th><th>45°</th><th>60°</th></tr><tr><td>sen</td><td>1/2</td><td>√2/2</td><td>√3/2</td></tr><tr><td>cos</td><td>√3/2</td><td>√2/2</td><td>1/2</td></tr><tr><td>tg</td><td>√3/3</td><td>1</td><td>√3</td></tr></table>
+<h2>Leis para qualquer triângulo</h2><div class="f">Lei dos senos: a/sen A = b/sen B = 2R<br>Lei dos cossenos: a² = b² + c² − 2bc·cos A</div><p>Seno e cosseno também descrevem ondas e fenômenos que se repetem (marés, som, estações).</p>`,
+        q: () => {let k = R(2, 6), H = 2 * R(5, 20), h = R(5, 30); return [N(`Triângulo retângulo com catetos ${3 * k} e ${4 * k}. Qual a hipotenusa?`, 5 * k, `Pitágoras: raiz de ${9 * k * k}+${16 * k * k}`), N(`Hipotenusa ${5 * k}, sen θ = 3/5. Qual o cateto oposto?`, 3 * k, `oposto = sen·hip = 3/5·${5 * k}`), N(`Ângulo de 30° e hipotenusa ${H}. Qual o cateto oposto? (sen 30° = 1/2)`, H / 2, `${H}·1/2`), N(`Um poste de ${h} m faz sombra de mesmo tamanho, com o Sol a 45°. Qual o tamanho da sombra (m)?`, h, `tg 45° = 1, então sombra = altura`)]}
+      },
+      {
+        s: 'mat', t: 'Geometria plana e semelhança', h: `<h2>Áreas</h2><div class="f">Retângulo: b·h · Triângulo: b·h/2<br>Trapézio: (B + b)·h/2 · Losango: D·d/2<br>Círculo: πr² · Comprimento: 2πr</div><p>Setor circular: fração do círculo. Ex.: um quarto de círculo tem área πr²/4. Coroa: π(R² − r²).</p>
+<h2>Semelhança</h2><p>Figuras semelhantes têm a mesma forma e lados proporcionais. Se o lado dobra, a <b>área quadruplica</b> (razão²) e o volume fica 8 vezes maior (razão³).</p><h2>Relações métricas no triângulo retângulo</h2><div class="f">a² = b² + c² · h² = m·n · b·c = a·h</div><p>a = hipotenusa, h = altura sobre ela, m e n = projeções dos catetos.</p>`,
+        q: () => {let b = 2 * R(3, 9), h = R(3, 8), r = R(2, 7), B = R(8, 12), c = R(3, 6), k = R(2, 4); return [N(`Triângulo de base ${b} e altura ${h}. Qual a área?`, b * h / 2, `${b}·${h}/2`), N(`Círculo de raio ${r}. Use π = 3. Qual a área?`, 3 * r * r, `3·${r}²`), N(`Trapézio com bases ${B} e ${c}, altura ${h}. Qual a área?`, (B + c) * h / 2, `(${B}+${c})·${h}/2`), N(`Uma figura é ampliada ${k} vezes em cada lado. Sua área original era ${h}. Qual a nova área?`, h * k * k, `área × razão² = ${h}·${k}²`)]}
+      },
+      {
+        s: 'fis', t: 'Termologia e calorimetria', h: `<p><b>Temperatura</b> mede a agitação das partículas. <b>Calor</b> é a energia que passa do corpo quente para o frio.</p><h2>Escalas</h2><div class="f">C/5 = (F − 32)/9<br>K = C + 273</div>
+<h2>Calor sensível (muda a temperatura)</h2><div class="f">Q = m · c · ΔT</div><p>m = massa, c = calor específico (água: 1 cal/g°C), ΔT = variação de temperatura.</p>
+<h2>Calor latente (muda o estado físico)</h2><div class="f">Q = m · L</div><p>A temperatura fica parada durante a mudança. Gelo: L = 80 cal/g.</p><div class="ok"><b>Equilíbrio térmico:</b> em sistema isolado, a soma dos calores é zero. Quem esfria cede, quem esquenta recebe. Misturar água igual quente e fria dá a média.</div>
+<h2>Propagação</h2><p><b>Condução</b> (contato), <b>convecção</b> (correntes de fluido), <b>irradiação</b> (ondas, até no vácuo).</p>`,
+        q: () => {let m = R(2, 10) * 50, d = R(10, 40), g = R(2, 9) * 10, k = R(2, 8) * 5; return [N(`${m} g de água sobem ${d}°C (c = 1 cal/g°C). Quantas calorias recebeu?`, m * d, `Q = ${m}·1·${d}`), N(`Quantas calorias para derreter ${g} g de gelo a 0°C? (L = 80 cal/g)`, g * 80, `Q = ${g}·80`), N(`Converta ${k}°C para Kelvin.`, k + 273, `K = C + 273`), N(`Água de ${k * 2}°C e igual massa a ${k * 4}°C são misturadas. Qual a temperatura final?`, k * 3, `Média: (${k * 2}+${k * 4})/2`)]}
+      },
+      {
+        s: 'fis', t: 'Gases e termodinâmica', h: `<p>Gás ideal: partículas sem interação. Três variáveis: pressão P, volume V e temperatura T (<b>sempre em Kelvin</b>).</p><div class="f">P·V = n·R·T · P₁V₁/T₁ = P₂V₂/T₂</div>
+<h2>Transformações</h2><p><b>Isotérmica</b> (T fixa): P·V constante. Comprimiu, a pressão sobe.<br><b>Isobárica</b> (P fixa): V/T constante. Esquentou, expandiu.<br><b>Isovolumétrica</b> (V fixo): P/T constante. Esquentou na panela fechada, a pressão sobe.</p>
+<h2>Leis da termodinâmica</h2><div class="f">1ª lei: ΔU = Q − W</div><p>Energia não some: o calor recebido vira trabalho ou aumenta a energia interna.</p><p><b>2ª lei:</b> o calor não vai sozinho do frio para o quente. Nenhuma máquina térmica tem rendimento de 100%: <b>η = W/Q_quente</b>, e no ciclo de Carnot η = 1 − T_fria/T_quente.</p>`,
+        q: () => {let p = R(1, 5), v = R(10, 40), t = R(1, 3) * 100, q = R(100, 400), w = R(10, 90); return [N(`Gás a pressão ${p} e volume ${2 * v}, em temperatura constante. O volume cai para ${v}. Qual a nova pressão?`, 2 * p, `P₁V₁=P₂V₂ → ${p}·${2 * v}/${v}`), N(`Gás em recipiente fechado a ${t} K e ${p} atm. Aquece a ${2 * t} K. Qual a nova pressão (atm)?`, 2 * p, `P/T constante: a temperatura dobrou`), N(`Um gás recebe ${q} J de calor e realiza ${w} J de trabalho. Qual a variação ΔU (J)?`, q - w, `ΔU = Q − W`), N(`Máquina recebe ${q * 2} J e realiza ${q} J. Qual o rendimento em %?`, 50, `η = ${q}/${q * 2}`)]}
+      },
+      {
+        s: 'fis', t: 'Óptica geométrica', h: `<p>A luz anda em linha reta (raios). Eclipses e a câmara escura mostram isso.</p><h2>Reflexão</h2><div class="f">ângulo de incidência = ângulo de reflexão</div><p><b>Espelho plano:</b> imagem do mesmo tamanho, atrás do espelho, à mesma distância do objeto. <b>Côncavo</b> junta a luz (maquiagem, farol). <b>Convexo</b> espalha e dá campo de visão maior (retrovisor).</p>
+<h2>Equação dos espelhos</h2><div class="f">1/f = 1/p + 1/p′ · A = −p′/p<br>f = R/2</div><p>f = foco, p = distância do objeto, p′ = distância da imagem.</p>
+<h2>Refração</h2><p>A luz muda de velocidade ao trocar de meio e “entorta”.</p><div class="f">n = c/v · n₁·sen θ₁ = n₂·sen θ₂</div><p>Fibra óptica funciona por <b>reflexão total</b>. O arco-íris é <b>dispersão</b> da luz branca em gotas.</p>`,
+        q: () => {let d = R(2, 9), k = R(2, 6), n = R(2, 4); return [N(`Objeto a ${d} m de um espelho plano. Qual a distância entre objeto e imagem (m)?`, 2 * d, `A imagem fica ${d} m atrás: 2·${d}`), N(`Espelho esférico com raio de curvatura ${4 * k}. Qual a distância focal?`, 2 * k, `f = R/2`), N(`Espelho com f = ${2 * k} e objeto a p = ${3 * k}. Qual a distância da imagem p′?`, 6 * k, `1/p′ = 1/${2 * k} − 1/${3 * k} = 1/${6 * k}`), N(`Luz com c = 300000 km/s entra num meio com n = ${n}. Qual a velocidade (km/s)?`, 300000 / n, `v = c/n`)]}
+      },
+      {
+        s: 'fis', t: 'Ondas e som', h: `<p>Onda transporta <b>energia</b>, não matéria. <b>Mecânicas</b> (som, mar) precisam de meio; <b>eletromagnéticas</b> (luz, rádio) viajam até no vácuo.</p><div class="f">v = λ · f<br>T = 1/f</div><p>λ = comprimento de onda (m), f = frequência (Hz), T = período (s).</p>
+<h2>Fenômenos</h2><p><b>Reflexão</b> (eco), <b>refração</b> (mudança de meio), <b>difração</b> (contornar obstáculos), <b>interferência</b> (somar ou anular), <b>ressonância</b>, <b>polarização</b> (só transversais).</p>
+<h2>Som</h2><p>Altura = frequência (agudo/grave). Intensidade = volume. Timbre = “identidade” da fonte. No ar, v ≈ 340 m/s. <b>Efeito Doppler:</b> a sirene soa mais aguda quando se aproxima.</p>
+<h2>Espectro eletromagnético</h2><p>Rádio, micro-ondas, infravermelho, luz visível, ultravioleta, raios X e gama (de menor para maior energia).</p>`,
+        q: () => {let l = R(2, 10), f = R(5, 50), F = P([2, 4, 5, 10, 20]), v = R(1, 4) * 100; return [N(`Onda com λ = ${l} m e f = ${f} Hz. Qual a velocidade (m/s)?`, l * f, `v = λ·f`), N(`Frequência de ${F} Hz. Qual o período (s)?`, 1 / F, `T = 1/${F}`), N(`Onda com v = ${v} m/s e f = ${v / 20} Hz. Qual o comprimento de onda (m)?`, 20, `λ = v/f`), N(`Som a 340 m/s é refletido e volta em 2 s. A que distância está o obstáculo (m)?`, 340, `Ida e volta = 680 m; distância = 340`)]}
+      },
+      {
+        s: 'qui', t: 'Estequiometria e mol', h: `<p><b>Mol</b> é uma “dúzia gigante”: 6·10²³ partículas (número de Avogadro). A <b>massa molar</b> (g/mol) diz quanto pesa 1 mol.</p><div class="f">n = m / M · 1 mol = 6·10²³ partículas<br>Gás nas CNTP: 1 mol = 22,4 L</div>
+<h2>Passo a passo</h2><p>1) Escreva e <b>balanceie</b> a equação (mesma quantidade de átomos dos dois lados).<br>2) Leia os coeficientes como “mols”.<br>3) Faça uma regra de três.</p><div class="f">2 H₂ + O₂ → 2 H₂O<br>(2 mol) (1 mol) (2 mol)<br>4 g + 32 g → 36 g</div>
+<p>Massas: H = 1, C = 12, O = 16, Ca = 40. Lei de Lavoisier: a massa total se conserva. Rendimento = real/teórico × 100.</p>`,
+        q: () => {let k = R(2, 6), n = R(1, 5), m = R(1, 4); return [N(`Quantos mol há em ${18 * k} g de H₂O? (M = 18 g/mol)`, k, `n = ${18 * k}/18`), N(`2H₂ + O₂ → 2H₂O. Com ${4 * m} g de H₂, quantos gramas de água se formam?`, 36 * m, `4 g H₂ → 36 g H₂O; regra de três`), N(`CaCO₃ → CaO + CO₂. Decompondo ${100 * m} g de CaCO₃, quantos g de CO₂? (M CaCO₃ = 100, CO₂ = 44)`, 44 * m, `100 g → 44 g de CO₂`), N(`Quantos litros ocupam ${n} mol de gás nas CNTP?`, 22.4 * n, `${n}·22,4`)]}
+      },
+      {
+        s: 'qui', t: 'Equilíbrio, pH e cinética', h: `<h2>Cinética (a velocidade)</h2><p>A reação fica mais rápida com <b>mais temperatura, concentração e superfície de contato</b>, e com <b>catalisador</b>, que diminui a energia de ativação (o “empurrão” inicial).</p>
+<h2>Equilíbrio</h2><p>Reação reversível chega ao equilíbrio quando a ida e a volta têm a mesma velocidade. Princípio de Le Chatelier: se perturbar, o sistema reage para compensar.</p><div class="f">Kc = [produtos] / [reagentes] (cada um elevado ao coeficiente)</div>
+<h2>pH</h2><div class="f">pH = −log[H⁺] · pH + pOH = 14<br>Kw = [H⁺]·[OH⁻] = 10⁻¹⁴</div><p>pH &lt; 7 ácido · pH = 7 neutro · pH &gt; 7 básico. A cada unidade, a acidez muda <b>10 vezes</b>.</p>`,
+        q: () => {let a = R(1, 6), b = R(8, 13); return [N(`[H⁺] = 10⁻${a} mol/L. Qual o pH?`, a, `pH = −log 10⁻${a}`), N(`Uma solução tem pH ${b}. Qual o pOH?`, 14 - b, `pOH = 14 − ${b}`), N(`Quantas vezes pH 2 é mais ácido que pH ${a + 3}?`, 10 ** (a + 1), `10^(${a + 3}−2)`), N(`Se a temperatura aumenta de modo que a velocidade dobra a cada 10°C, qual o fator para um aumento de 30°C?`, 8, `2·2·2`)]}
+      },
+      {
+        s: 'qui', t: 'Termoquímica e eletroquímica', h: `<h2>Termoquímica</h2><p><b>Exotérmica:</b> libera calor, ΔH &lt; 0 (queima). <b>Endotérmica:</b> absorve calor, ΔH &gt; 0 (fusão do gelo).</p><div class="f">ΔH = H_produtos − H_reagentes</div><p><b>Lei de Hess:</b> o ΔH total de uma reação é a soma dos ΔH das etapas. Se inverter a equação, o sinal troca; se multiplicar, o ΔH multiplica.</p>
+<h2>Eletroquímica</h2><p><b>Oxidação</b> = perde elétrons (Nox sobe). <b>Redução</b> = ganha elétrons (Nox cai). <b>Pilha:</b> reação espontânea gera corrente (ânodo −, cátodo +). <b>Eletrólise:</b> a corrente força uma reação.</p><div class="f">ddp = E°(cátodo) − E°(ânodo)</div>
+<h2>Radioatividade</h2><p>Alfa (α), beta (β) e gama (γ). Meia-vida: tempo para metade desintegrar. Fissão divide o núcleo; fusão junta núcleos.</p>`,
+        q: () => {let a = R(2, 6) * 50, b = R(1, 5) * 20, n = R(2, 4), E = R(1, 3) / 2; return [N(`Etapa 1: ΔH = −${a} kJ. Etapa 2: ΔH = −${b} kJ. Qual o ΔH total?`, -(a + b), `Hess: soma`), N(`Um material radioativo de ${100 * 2 ** n} g tem meia-vida de 1 dia. Quantos gramas restam após ${n} dias?`, 100, `dividir por 2, ${n} vezes`), N(`Pilha com E° cátodo = +${E + 1} V e ânodo = +${E} V. Qual a ddp (V)?`, 1, `ddp = ${E + 1} − ${E}`), T(`Uma reação com ΔH &gt; 0 é:`, 'endotérmica', ['exotérmica', 'neutra', 'nuclear'], 'ΔH positivo: absorve calor')]}
+      },
+      {
+        s: 'bio', t: 'Ecologia e saúde', h: `<h2>Ecologia</h2><p><b>População:</b> mesma espécie. <b>Comunidade:</b> várias espécies. <b>Ecossistema:</b> comunidade + ambiente. <b>Cadeia alimentar:</b> produtor (planta) → consumidor → decompositor. A energia perde cerca de <b>90% a cada nível</b>, por isso há menos predadores que presas.</p>
+<p>Relações: <b>mutualismo</b> (+/+), <b>predação</b> (+/−), <b>parasitismo</b> (+/−), <b>competição</b> (−/−). Ameaças: desmatamento, poluição, espécies invasoras e mudanças climáticas. Unidades de conservação protegem a natureza.</p>
+<h2>Saúde</h2><p><b>Vírus:</b> dengue, Zika, Chikungunya, febre amarela, HIV, HPV. <b>Bactérias:</b> sífilis, tuberculose. <b>Protozoários:</b> malária, Chagas, leishmaniose. Epidemia é surto regional; pandemia é mundial; endemia é constante em uma região.</p><p><b>Vacina</b> treina a defesa antes. <b>Soro</b> dá anticorpos prontos. O <b>SUS</b> é público e universal. ISTs se previnem com preservativo.</p>`,
+        q: () => [T('Qual a relação em que as duas espécies saem ganhando?', 'mutualismo', ['predação', 'parasitismo', 'competição'], 'Mutualismo é +/+'), T('A dengue é transmitida pelo:', 'mosquito Aedes aegypti', ['barbeiro', 'caramujo', 'carrapato'], 'Elimine água parada.'), T('Doença que ocorre no mundo todo é chamada de:', 'pandemia', ['endemia', 'epidemia', 'sintoma'], 'Pan = todos.'), N(`Um produtor tem ${R(2, 9) * 1000} kcal de energia. Quanto passa ao 1º consumidor (10%)? (use 5000 kcal)`, 500, `10% de 5000 = 500`)]
+      },
+      {
+        s: 'bio', t: 'Células, DNA e genética', h: `<h2>Organelas</h2><p><b>Núcleo</b> guarda o DNA. <b>Mitocôndria</b> produz energia. <b>Ribossomo</b> fabrica proteínas. <b>Cloroplasto</b> faz fotossíntese. <b>Lisossomo</b> digere.</p>
+<h2>Divisão celular</h2><p><b>Mitose:</b> 1 célula → 2 iguais (crescimento e cura). <b>Meiose:</b> 1 célula → 4 diferentes e com metade dos cromossomos (gametas).</p>
+<h2>DNA → RNA → proteína</h2><p><b>Replicação</b> copia o DNA. <b>Transcrição:</b> DNA → RNA. <b>Tradução:</b> o RNA é lido no ribossomo (3 letras = 1 aminoácido).</p><p>Biotecnologia: transgênicos, clonagem, CRISPR (“tesoura” genética), PCR.</p>
+<h2>1ª e 2ª leis de Mendel</h2><p>Cada característica vem de 2 alelos. <b>Dominante</b> (A) aparece sempre; <b>recessivo</b> (a) só em aa. <b>Aa × Aa</b> → 25% AA, 50% Aa, 25% aa. 2ª lei: genes diferentes se separam de modo independente (AaBb forma 4 tipos de gameta).</p><div class="f">Probabilidade = (casos favoráveis) / (casos possíveis)</div>`,
+        q: () => {let n = R(2, 10) * 40; return [T('Qual organela produz energia?', 'mitocôndria', ['ribossomo', 'núcleo', 'lisossomo'], 'A “usina” da célula.'), T('Qual divisão gera 4 células com metade dos cromossomos?', 'meiose', ['mitose', 'transcrição', 'fissão'], 'Meiose forma gametas.'), N(`Cruzamento Aa × Aa. Quantos descendentes aa são esperados em ${n} filhotes?`, n / 4, `25% de ${n}`), N(`Quantos tipos de gameta forma o genótipo AaBb?`, 4, `AB, Ab, aB, ab`)]}
+      },
+      {
+        s: 'his', t: 'Iluminismo e revoluções (séc. XVIII-XIX)', h: `<p>Antes de 1789, os reis tinham poder absoluto: o <b>Antigo Regime</b>. A sociedade se dividia em Clero, Nobreza e Terceiro Estado (povo e burguesia), que pagava todos os impostos.</p>
+<h2>Iluminismo</h2><p>Filósofos defendem a razão e a liberdade. <b>Locke</b>: direitos naturais. <b>Montesquieu</b>: separação dos poderes. <b>Rousseau</b>: soberania popular. <b>Voltaire</b>: tolerância e liberdade de expressão.</p>
+<h2>Revolução Industrial (Inglaterra, séc. XVIII)</h2><p>A máquina a vapor substitui o artesanato pela fábrica. Nascem a <b>classe operária</b> e as cidades industriais, com jornadas longas, trabalho infantil e luta por direitos (sindicatos, socialismo, anarquismo).</p>
+<h2>Revolução Francesa (1789)</h2><p>Queda da Bastilha, Declaração dos Direitos do Homem, fim do absolutismo. Depois vêm o Terror e <b>Napoleão</b>, que cria o Código Civil e espalha as ideias da revolução. Em seguida, o <b>nacionalismo</b> unifica Itália e Alemanha.</p>
+<h2>Século XIX e XX</h2><p>Capitalismo monopolista, imperialismo, neoliberalismo e globalização aproximam economias e ampliam desigualdades.</p>`,
+        q: () => [T('Quem defendeu a separação dos poderes?', 'Montesquieu', ['Hobbes', 'Marx', 'Napoleão'], 'Executivo, Legislativo e Judiciário.'), T('Onde começou a Revolução Industrial?', 'Inglaterra', ['França', 'Brasil', 'Estados Unidos'], 'Século XVIII.'), T('Lema da Revolução Francesa:', 'liberdade, igualdade e fraternidade', ['ordem e progresso', 'Deus, pátria e família', 'paz e amor'], '1789.')]
+      },
+      {
+        s: 'his', t: 'Brasil: Império e República', h: `<h2>Chegada da Família Real (1808)</h2><p>Fugindo de Napoleão, Dom João VI muda a corte para o Rio: abre os portos, cria o Banco do Brasil. 1822: <b>Independência</b> com Dom Pedro I.</p>
+<h2>Primeiro e Segundo Reinados</h2><p>Pedro I outorga a Constituição de 1824 e abdica em 1831. Pedro II governa de 1840 a 1889. O <b>café</b> vira o motor da economia no Vale do Paraíba e depois no Oeste Paulista. O tráfico negreiro acaba em 1850 e crescem os imigrantes. <b>Lei Áurea</b>: 1888.</p>
+<h2>República</h2><p>1889: <b>Proclamação</b> pelo marechal Deodoro. <b>Primeira República</b> (1889-1930): coronelismo, voto de cabresto e “política do café com leite” (SP e MG).</p>
+<h2>Era Vargas (1930-1945)</h2><p>Governo Provisório → Constituição de 1934 → <b>Estado Novo</b> (1937, ditadura). Criou a CLT e o salário mínimo, e incentivou a industrialização (CSN). O Brasil do século XXI ainda carrega desigualdades herdadas da escravidão.</p>`,
+        q: () => [T('A Independência do Brasil ocorreu em:', '1822', ['1808', '1889', '1888'], 'Dom Pedro I.'), T('Qual produto sustentou a economia no Segundo Reinado?', 'café', ['cana', 'ouro', 'borracha'], 'Café.'), T('Vargas criou:', 'a CLT', ['a Constituição de 1824', 'o voto de cabresto', 'o tráfico negreiro'], 'Direitos trabalhistas.'), T('A Proclamação da República foi em:', '1889', ['1822', '1930', '1937'], 'Marechal Deodoro.')]
+      },
+      {
+        s: 'geo', t: 'Economia, globalização e população', h: `<p>Setores: <b>primário</b> (agricultura, mineração), <b>secundário</b> (indústria), <b>terciário</b> (comércio e serviços). A <b>globalização</b> integra economias, culturas e informação por transportes e internet. As multinacionais criam a <b>divisão territorial do trabalho</b>.</p>
+<h2>Capitalismo × socialismo</h2><p>Capitalismo: propriedade privada e mercado. Socialismo: o Estado controla meios de produção.</p>
+<h2>Urbano e rural</h2><p>Urbanização acelerada traz favelas, trânsito e desigualdade. No campo, o agronegócio convive com a concentração de terras e os conflitos agrários.</p>
+<h2>População</h2><div class="f">Crescimento vegetativo = natalidade − mortalidade<br>Densidade = habitantes / km²</div><p>Pirâmide de base larga = país jovem; base estreita = envelhecido.</p>`,
+        q: () => {let p = R(2, 9) * 100, a = R(2, 5) * 10; return [N(`Cidade com ${p * a} habitantes em ${a} km². Qual a densidade (hab/km²)?`, p, `${p * a}/${a}`), N(`Natalidade de ${a + 15}‰ e mortalidade de ${a}‰. Qual o crescimento vegetativo (‰)?`, 15, `${a + 15} − ${a}`), T('Indústria pertence ao setor:', 'secundário', ['primário', 'terciário', 'quaternário'], 'Transforma matéria-prima.')]}
+      },
+      {
+        s: 'geo', t: 'Meio ambiente, energia e cartografia', h: `<h2>Biomas</h2><p>Amazônia (floresta úmida), Cerrado (savana), Caatinga (semiárido), Mata Atlântica, Pampa e Pantanal (planície alagável).</p>
+<h2>Energia</h2><p><b>Renováveis:</b> hidrelétrica, solar, eólica, biomassa. <b>Não renováveis:</b> petróleo, carvão, gás. A matriz elétrica brasileira tem muita hidrelétrica, que alaga áreas.</p><p>Desenvolvimento sustentável = atender o presente sem comprometer o futuro. Acordos: Rio-92, Protocolo de Kyoto, Acordo de Paris.</p>
+<h2>Cartografia</h2><div class="f">Escala 1:100 000 → 1 cm no mapa = 100 000 cm = 1 km</div><p>Coordenadas: <b>latitude</b> (norte/sul, 0° = Equador) e <b>longitude</b> (leste/oeste, 0° = Greenwich). Escala <b>maior</b> = mais detalhe, menos área.</p>`,
+        q: () => {let c = R(2, 9), e = P([50000, 100000, 25000]); return [N(`Escala 1:${e}. ${c} cm no mapa equivalem a quantos km?`, c * e / 100000, `${c}·${e} cm ÷ 100 000`), T('Qual energia é renovável?', 'eólica', ['carvão', 'petróleo', 'gás natural'], 'Vento.'), T('Bioma do semiárido nordestino:', 'Caatinga', ['Cerrado', 'Pampa', 'Amazônia'], 'Sertão.')]}
+      },
+      {
+        s: 'soc', t: 'Cultura, trabalho e Estado', h: `<p><b>Socialização:</b> aprendemos valores com família, escola e mídia. A identidade se constrói nas relações sociais.</p>
+<h2>Preconceito</h2><p><b>Estereótipo</b> é uma imagem pronta; <b>preconceito</b> é a opinião negativa; <b>discriminação</b> é agir com base nela. Pense em racismo, machismo e xenofobia.</p>
+<h2>Cultura</h2><p><b>Etnocentrismo:</b> achar a própria cultura a melhor. <b>Relativismo cultural:</b> entender cada cultura no seu contexto. <b>Indústria cultural:</b> cultura vira produto; a mídia pode manipular informação. Consumismo e redes sociais moldam desejos.</p>
+<h2>Trabalho</h2><p>Automação e plataformas (uberização) mudam as relações. Trabalho análogo à escravidão ainda existe e é crime.</p>
+<h2>Estado e cidadania</h2><p>Três poderes: Executivo (executa), Legislativo (faz leis), Judiciário (julga). Cidadania = direitos civis, políticos e sociais.</p>`,
+        q: () => [T('Achar a própria cultura superior é:', 'etnocentrismo', ['relativismo', 'mutualismo', 'globalização'], 'Etno = povo.'), T('Quem faz as leis?', 'Legislativo', ['Executivo', 'Judiciário', 'Exército'], 'Congresso.'), T('Agir contra alguém por preconceito é:', 'discriminação', ['socialização', 'cidadania', 'relativismo'], '')]
+      },
+      {
+        s: 'por', t: 'Gramática e interpretação', h: `<h2>Classes de palavras</h2><p>Substantivo (nomeia), adjetivo (descreve), verbo (ação/estado), advérbio (modifica verbo), preposição (liga), conjunção (une orações).</p>
+<h2>Concordância e regência</h2><p>O verbo concorda com o <b>sujeito</b>: “Os alunos chegaram”. Regência: assistir <b>ao</b> filme, preferir X <b>a</b> Y, aspirar <b>a</b> algo.</p>
+<h2>Coordenação × subordinação</h2><p><b>Coordenadas</b> são independentes: <i>e</i> (soma), <i>mas</i> (contraste), <i>ou</i> (escolha), <i>pois</i> (explicação). <b>Subordinadas</b> dependem da principal: <i>porque</i> (causa), <i>embora</i> (concessão), <i>se</i> (condição), <i>quando</i> (tempo).</p>
+<h2>Interpretar</h2><p><b>Denotação</b> = sentido literal; <b>conotação</b> = figurado. <b>Coesão</b> liga as partes; <b>coerência</b> dá sentido. Discurso direto (aspas/travessão), indireto (o narrador conta) e indireto livre (mistura).</p>
+<h2>Figuras</h2><p>Metáfora (“ela é um anjo”), comparação (“forte como um touro”), hipérbole (exagero), ironia (diz o contrário), metonímia (“li Machado”).</p>`,
+        q: () => [T('“Estudei muito, mas não passei.” O “mas” indica:', 'oposição', ['causa', 'condição', 'tempo'], 'Contraste.'), T('“Meu coração é uma pedra” é uma:', 'metáfora', ['comparação', 'hipérbole', 'metonímia'], 'Sem “como”.'), T('Qual está correta?', 'Assisti ao jogo.', ['Assisti o jogo.', 'Os meninos chegou.', 'Prefiro mais café do que chá.'], 'Assistir pede “a”.')]
+      },
+      {
+        s: 'por', t: 'Romantismo e Realismo', h: `<h2>Romantismo (séc. XIX)</h2><p>Valoriza emoção, subjetividade e a pátria. <b>Indianismo</b>: Gonçalves Dias e José de Alencar (<i>O Guarani</i>). <b>Ultrarromantismo</b>: Álvares de Azevedo, com morte e melancolia. <b>Condoreirismo</b>: Castro Alves e a luta antiescravista. Prosa urbana: Macedo e Alencar (<i>Senhora</i>).</p>
+<h2>Realismo (a partir de 1881)</h2><p>Olha a sociedade como ela é, com ironia e crítica à burguesia e à hipocrisia. <b>Machado de Assis</b> (<i>Memórias Póstumas de Brás Cubas</i>, <i>Dom Casmurro</i>). Em Portugal: <b>Eça de Queirós</b>.</p>
+<h2>Como diferenciar</h2><p>Romantismo = sonho, herói, amor idealizado. Realismo = análise, cotidiano, crítica social.</p>
+<h2>Conto, crônica e literatura periférica</h2><p>O conto é curto, com um conflito. A crônica comenta o cotidiano. A literatura periférica dá voz a quem vive nas periferias.</p>`,
+        q: () => [T('Autor do Realismo brasileiro:', 'Machado de Assis', ['Álvares de Azevedo', 'Castro Alves', 'Gonçalves Dias'], ''), T('Castro Alves é associado a:', 'poesia condoreira e antiescravista', ['Realismo', 'Barroco', 'poesia concreta'], ''), T('Característica do Romantismo:', 'idealização do amor e da pátria', ['crítica científica fria', 'objetividade', 'humor ácido'], '')]
+      },
+      {
+        s: 'ing', t: 'Estratégias de leitura e modais', h: `<h2>Antes de ler</h2><p>Veja título, imagem e formato (notícia, anúncio, tirinha). Isso entrega o objetivo do texto. Você <b>não precisa</b> entender todas as palavras.</p>
+<h2>Cognatos e conectivos</h2><p>Cognatos parecem com o português (<i>important, family</i>). Conectivos: <b>but/however</b> (contraste), <b>because</b> (causa), <b>so/therefore</b> (consequência), <b>although</b> (apesar de), <b>also</b> (adição).</p>
+<h2>Referência (it, they, which)</h2><p>Troque o pronome pelo substantivo que ele substitui. <i>It</i> = coisa; <i>they</i> = vários; <i>which</i> = a coisa antes dele.</p>
+<h2>Modal verbs</h2><p><b>can</b> = poder/conseguir · <b>must</b> = obrigação · <b>should</b> = conselho · <b>might/may</b> = possibilidade · <b>would</b> = condicional.</p>
+<h2>Gráficos e infográficos</h2><p>Leia título, legenda e unidades antes de responder.</p>`,
+        q: () => [T('“However” indica:', 'contraste', ['causa', 'adição', 'tempo'], ''), T('“You should study” expressa:', 'conselho', ['proibição', 'certeza', 'passado'], ''), T('“Although” significa:', 'embora', ['porque', 'então', 'também'], '')]
+      }
+    ];
+
+    // Aulas complementares adicionadas para cobrir as lacunas identificadas no material original.
+    const EXTRA = [
+      {s: 'mat', t: 'Conjuntos numéricos, razão e proporcionalidade', h: `<p>Os conjuntos numéricos organizam os números usados em cálculos: naturais (ℕ), inteiros (ℤ), racionais (ℚ), irracionais e reais (ℝ). Todo natural é inteiro; todo inteiro é racional; e racionais e irracionais formam os reais.</p><h2>Razão e proporção</h2><p>Razão compara duas grandezas por divisão. Se há 12 meninas e 8 meninos, a razão meninas/meninos é 12/8 = 3/2. Duas razões equivalentes formam uma proporção: a/b = c/d.</p><div class="f">Se a/b = c/d, então a·d = b·c (produto dos meios pelos extremos).</div><h2>Proporcionalidade</h2><p>Direta: se uma grandeza dobra, a outra dobra (preço e quantidade com preço unitário fixo). Inversa: se uma dobra, a outra cai pela metade (tempo para concluir trabalho com número de trabalhadores e produtividade constantes).</p><h2>Notação científica, porcentagem e índices</h2><div class="f">a × 10ⁿ, com 1 ≤ |a| &lt; 10<br>p% = p/100<br>Variação percentual = (valor final − inicial)/inicial × 100%</div><p>Taxa e índice comparam valores em determinado período ou população. Sempre identifique a base de comparação.</p>`, q: () => [T('Qual conjunto contém todos os números inteiros e também as frações?', 'Racionais (ℚ)', ['Naturais (ℕ)', 'Irracionais', 'Apenas inteiros'], 'Racionais podem ser escritos como fração de inteiros.'), T('Se 4 cadernos custam R$ 28, quanto custam 7 pelo mesmo preço unitário?', 'R$ 49', ['R$ 35', 'R$ 42', 'R$ 56'], 'Preço e quantidade são diretamente proporcionais.'), T('Se 6 trabalhadores fazem uma tarefa em 10 dias, mantendo o ritmo, 12 trabalhadores levam:', '5 dias', ['10 dias', '15 dias', '20 dias'], 'Trabalhadores e tempo são inversamente proporcionais.'), T('0,00052 em notação científica é:', '5,2 × 10⁻⁴', ['52 × 10⁻⁴', '5,2 × 10⁴', '0,52 × 10⁻³'], 'Desloque a vírgula quatro casas para a direita; expoente negativo.')]},
+      {s: 'mat', t: 'Funções quadráticas, sistemas lineares e gráficos', h: `<h2>Função quadrática</h2><div class="f">f(x) = ax² + bx + c, com a ≠ 0<br>Δ = b² − 4ac<br>xᵥ = −b/(2a) · yᵥ = −Δ/(4a)</div><p>O gráfico é uma parábola. Se a &gt; 0, abre para cima e tem mínimo; se a &lt; 0, abre para baixo e tem máximo. As raízes são as interseções com o eixo x.</p><h2>Sistemas lineares</h2><p>Um sistema reúne equações que devem ser verdadeiras ao mesmo tempo. Métodos: substituição, adição/elimina­ção e interpretação gráfica. Duas retas podem se cruzar em um ponto (uma solução), ser paralelas (nenhuma) ou coincidir (infinitas).</p><div class="f">Exemplo: x + y = 10 e x − y = 2 → somando: 2x = 12 → x = 6; y = 4.</div><h2>Modelagem</h2><p>Defina as incógnitas, traduza o enunciado em equações, resolva e confira se a resposta faz sentido nas unidades e no contexto.</p>`, q: () => [T('Em f(x)=−2x²+8x+1, a parábola tem concavidade:', 'Para baixo', ['Para cima', 'Não é parábola', 'Vertical para a direita'], 'O coeficiente a é negativo.'), T('O vértice de uma parábola representa:', 'Ponto de máximo ou mínimo', ['Sempre uma raiz', 'Apenas o intercepto y', 'A inclinação da reta'], 'Depende do sinal de a.'), T('O sistema x+y=9 e x−y=1 tem solução:', 'x=5 e y=4', ['x=4 e y=5', 'x=9 e y=1', 'x=1 e y=9'], 'Some as equações: 2x=10.'), T('Duas retas paralelas distintas representam sistema:', 'Impossível (sem solução)', ['Possível determinado', 'Possível indeterminado', 'Com duas soluções'], 'Não há ponto de interseção.')]},
+      {s: 'mat', t: 'Probabilidade e estatística', h: `<h2>Probabilidade</h2><p>O espaço amostral Ω reúne todos os resultados possíveis. Um evento A é um subconjunto de Ω.</p><div class="f">P(A) = casos favoráveis / casos possíveis<br>P(Aᶜ) = 1 − P(A)<br>P(A ou B) = P(A)+P(B)−P(A e B)</div><p>Em resultados equiprováveis, conte os casos. Eventos independentes: a ocorrência de um não altera a probabilidade do outro; P(A e B)=P(A)·P(B). Sem reposição, as probabilidades geralmente mudam.</p><h2>Estatística descritiva</h2><p>Média = soma dos valores/número de valores. Mediana = valor central após ordenar (ou média dos dois centrais). Moda = valor mais frequente. Amplitude = máximo − mínimo.</p><p>Gráficos: barras comparam categorias; setores mostram partes de um todo; histogramas representam distribuição de dados agrupados em intervalos; linhas mostram evolução temporal. Observe título, escala, fonte e unidade.</p>`, q: () => [T('Ao lançar um dado honesto, a probabilidade de sair número par é:', '1/2', ['1/6', '1/3', '2/3'], 'Há três resultados pares entre seis.'), T('A média de 4, 6 e 8 é:', '6', ['4', '8', '18'], '(4+6+8)/3.'), T('A mediana de 2, 3, 9, 10, 20 é:', '9', ['3', '10', '20'], 'O valor central após ordenar.'), T('Ao retirar duas cartas sem reposição, os eventos são geralmente:', 'Dependentes', ['Independentes', 'Impossíveis', 'Mutuamente certos'], 'A primeira retirada altera o conjunto disponível.')]},
+      {s: 'fis', t: 'Termologia: temperatura, calor e mudanças de estado', h: `<p>Temperatura está relacionada ao estado térmico; calor é energia transferida espontaneamente do corpo mais quente para o mais frio. Não confunda os conceitos.</p><h2>Escalas e dilatação</h2><div class="f">K = °C + 273 (aprox.)<br>ΔL = L₀·α·ΔT<br>ΔV = V₀·γ·ΔT</div><p>Na dilatação linear, α é o coeficiente do material. Em sólidos isotrópicos, a dilatação volumétrica é aproximadamente γ = 3α.</p><h2>Calorimetria</h2><div class="f">Calor sensível: Q = m·c·ΔT<br>Calor latente: Q = m·L</div><p>Durante uma mudança de estado de substância pura, a temperatura pode permanecer constante enquanto o material recebe ou cede calor. Em sistema isolado, o calor cedido é igual ao absorvido.</p><p>Capacidade térmica C = Q/ΔT; calor específico c = Q/(m·ΔT). Em curvas de aquecimento, trechos inclinados indicam variação de temperatura e patamares indicam mudança de fase.</p>`, q: () => [T('Calor é:', 'Energia em transferência por diferença de temperatura', ['A mesma coisa que temperatura', 'Uma substância contida no corpo', 'Medida direta da massa'], 'Calor é energia transferida.'), T('Qual fórmula calcula calor sensível?', 'Q = m·c·ΔT', ['Q = m·L', 'Q = U·i', 'Q = P/t'], 'Não há mudança de estado no modelo sensível.'), T('Durante a fusão de uma substância pura, em pressão constante, a temperatura:', 'Permanece constante durante a mudança de fase', ['Sempre aumenta', 'Sempre diminui', 'Torna-se zero'], 'A energia altera a organização/estado, não a temperatura.'), T('A unidade SI de temperatura termodinâmica é:', 'kelvin (K)', ['grau Celsius (°C)', 'caloria (cal)', 'joule (J)'], 'Kelvin é a unidade SI.')]},
+      {s: 'fis', t: 'Gases, trabalho e máquinas térmicas', h: `<p>Para uma quantidade fixa de gás ideal: PV = nRT. As transformações ideais são isotérmica (T constante), isobárica (P constante) e isovolumétrica/isocórica (V constante). Em processo adiabático, não há troca de calor com o meio (Q=0).</p><h2>Trabalho e primeira lei</h2><div class="f">ΔU = Q − W<br>W = P·ΔV (pressão constante)</div><p>Adotamos W como trabalho realizado pelo gás. Ao expandir, W é positivo; ao comprimir, W é negativo. A energia interna de um gás ideal depende da temperatura.</p><h2>Máquinas térmicas</h2><p>Máquina térmica recebe calor de uma fonte quente, transforma parte em trabalho e rejeita o restante à fonte fria. Refrigeradores usam trabalho para transferir calor do frio para o quente.</p><div class="f">Rendimento η = W/Qₕ = 1 − Q𝒻/Qₕ<br>ηCarnot = 1 − T𝒻/Tₕ (temperaturas em kelvin)</div><p>Nenhuma máquina térmica real converte todo o calor em trabalho. O ciclo de Carnot é um limite teórico reversível.</p>`, q: () => [T('Em transformação isotérmica, permanece constante:', 'Temperatura', ['Pressão', 'Volume', 'Quantidade de calor'], 'Iso = igual; térmica = temperatura.'), T('Em processo adiabático, a troca de calor é:', 'Zero', ['Máxima', 'Igual ao trabalho', 'Sempre positiva'], 'Q=0.'), T('Uma máquina recebe 100 J e realiza 30 J de trabalho. Seu rendimento é:', '30%', ['3%', '70%', '130%'], 'η = W/Q recebido = 30/100.'), T('O rendimento de Carnot depende:', 'Das temperaturas das fontes quente e fria em kelvin', ['Da cor da máquina', 'Somente do volume', 'Da massa do recipiente'], 'η = 1 − Tf/Th.')]},
+      {s: 'fis', t: 'Óptica geométrica: espelhos, refração e instrumentos', h: `<p>Na óptica geométrica, a luz é representada por raios. Em meio homogêneo e transparente, propaga-se em linha reta. A independência dos raios e a reversibilidade ajudam a analisar imagens.</p><h2>Espelhos</h2><p>Espelho plano forma imagem virtual, direita, do mesmo tamanho e à mesma distância atrás do espelho que o objeto está à frente. Em espelhos esféricos, use raios notáveis: paralelo ao eixo reflete pelo foco; pelo foco reflete paralelo; pelo centro de curvatura retorna sobre si.</p><div class="f">Equação de Gauss: 1/f = 1/p + 1/p′<br>Aumento: A = i/o = −p′/p</div><p>Convexos formam imagens virtuais, direitas e menores. Côncavos podem formar imagens reais ou virtuais conforme a posição do objeto.</p><h2>Refração</h2><div class="f">n₁·sen(i) = n₂·sen(r) (Lei de Snell)<br>n = c/v</div><p>Ao entrar em meio de maior índice, o raio aproxima-se da normal. Reflexão total ocorre ao tentar passar de meio mais refringente para menos refringente, com ângulo acima do limite.</p><p>Dispersão separa cores porque o índice depende do comprimento de onda. A atmosfera espalha mais intensamente comprimentos de onda curtos, contribuindo para o céu azul.</p>`, q: () => [T('A imagem em espelho plano é:', 'Virtual, direita e do mesmo tamanho', ['Real e invertida', 'Virtual e sempre menor', 'Real e do mesmo tamanho'], 'Propriedades do espelho plano.'), T('A lei da refração é:', 'n₁ sen(i)=n₂ sen(r)', ['F=ma', 'U=R·i', 'Q=m·c·ΔT'], 'Lei de Snell-Descartes.'), T('Um espelho convexo forma imagem:', 'Virtual, direita e menor', ['Real, invertida e maior', 'Real e direita', 'Virtual e invertida'], 'É o tipo usado em retrovisores para ampliar campo de visão.'), T('A reflexão total exige luz indo:', 'De meio mais refringente para menos refringente, acima do ângulo limite', ['Do vácuo para vidro em qualquer ângulo', 'De menor para maior índice', 'Sempre no ar'], 'Condições necessárias para reflexão total.')]},
+      {s: 'fis', t: 'Ondulatória, som e acústica', h: `<p>Ondas transportam energia sem transporte líquido de matéria. Podem ser mecânicas (precisam de meio) ou eletromagnéticas (propagam-se no vácuo); transversais ou longitudinais.</p><div class="f">v = λ·f<br>T = 1/f</div><p>Frequência é o número de oscilações por segundo; período é o tempo de uma oscilação; comprimento de onda é a distância entre pontos em mesma fase. Ao mudar de meio, a frequência permanece, mas velocidade e comprimento podem mudar.</p><h2>Fenômenos</h2><p>Reflexão, refração, difração, interferência e polarização. Ondas estacionárias surgem da superposição de ondas de mesma frequência em sentidos opostos, formando nós e ventres. Cordas fixas nas extremidades e tubos sonoros têm padrões de ressonância.</p><h2>Som</h2><p>Som audível humano, em condições típicas, fica aproximadamente entre 20 Hz e 20 kHz. Altura depende da frequência; intensidade relaciona-se à energia/amplitude; timbre distingue fontes. Eco é reflexão percebida separadamente; reverberação é persistência do som por múltiplas reflexões.</p><div class="f">Nível sonoro β = 10 log₁₀(I/I₀) dB</div>`, q: () => [T('A relação fundamental das ondas é:', 'v = λ·f', ['v = λ/f²', 'v = f/λ', 'v = m·a'], 'Velocidade é comprimento de onda vezes frequência.'), T('Ao passar para outro meio, a frequência da onda:', 'Permanece constante na fronteira', ['Sempre dobra', 'Sempre zera', 'É determinada apenas pela amplitude'], 'A frequência é determinada pela fonte.'), T('O timbre permite distinguir:', 'Fontes sonoras diferentes mesmo com mesma altura e intensidade', ['Som alto de som baixo apenas', 'Frequência de período', 'Luz de calor'], 'Depende da composição harmônica e forma de onda.'), T('Ondas estacionárias apresentam:', 'Nós e ventres', ['Somente cristas que viajam', 'Ausência de interferência', 'Velocidade sempre zero em todos os pontos'], 'Resultam da superposição de ondas opostas.')]},
+      {s: 'qui', t: 'Matéria, misturas e separação de materiais', h: `<p>Matéria tem massa e ocupa espaço. Propriedades gerais incluem massa e volume; propriedades específicas ajudam a identificar substâncias, como densidade, pontos de fusão/ebulição e solubilidade.</p><div class="f">Densidade: d = m/V</div><h2>Substâncias e misturas</h2><p>Substância pura tem composição definida. Mistura homogênea apresenta uma fase; heterogênea apresenta duas ou mais. Fase é cada porção visualmente uniforme; componente é cada substância presente.</p><h2>Métodos de separação</h2><p>Filtração separa sólido insolúvel de líquido; decantação usa diferença de densidade; centrifugação acelera a separação; destilação simples separa líquido de sólido dissolvido; fracionada separa líquidos com diferentes pontos de ebulição; cromatografia separa por diferentes afinidades entre fases; imantação usa magnetismo.</p><p>Escolha o método conforme estado físico, tamanho de partículas, densidade, solubilidade, magnetismo e ponto de ebulição.</p>`, q: () => [T('Uma mistura homogênea apresenta:', 'Uma única fase', ['Duas fases obrigatoriamente', 'Somente elementos químicos', 'Sempre sólidos'], 'Homogênea é uniforme em toda a extensão.'), T('A filtração é adequada para separar:', 'Sólido insolúvel de líquido', ['Dois líquidos miscíveis', 'Sal dissolvido em água', 'Etanol e água completamente misturados'], 'O filtro retém partículas sólidas.'), T('A destilação fracionada utiliza principalmente diferenças de:', 'Pontos de ebulição', ['Cor', 'Massa do recipiente', 'Formato das moléculas'], 'Os componentes vaporizam em temperaturas diferentes.'), T('A densidade é calculada por:', 'massa dividida pelo volume', ['volume dividido pela massa', 'massa vezes temperatura', 'pressão vezes volume'], 'd=m/V.')]},
+      {s: 'qui', t: 'Estrutura atômica, fórmulas e funções inorgânicas', h: `<p>O átomo possui núcleo com prótons e nêutrons e eletrosfera com elétrons. Número atômico Z = prótons; número de massa A = prótons + nêutrons. Isótopos têm mesmo Z e diferentes números de nêutrons; íons resultam de perda ou ganho de elétrons.</p><h2>Fórmulas e leis</h2><p>Fórmula molecular informa a quantidade real de átomos; fórmula mínima indica a menor proporção inteira; composição centesimal expressa percentuais em massa. A Lei de Proust afirma proporções constantes em uma substância composta pura.</p><h2>Funções inorgânicas</h2><p>Ácidos liberam H⁺ em água no modelo de Arrhenius; bases liberam OH⁻; sais podem resultar de neutralização; óxidos são compostos binários com oxigênio (com exceções). Indicadores mudam de cor conforme o pH.</p><div class="f">Neutralização: ácido + base → sal + água<br>pH &lt; 7: ácido · pH = 7: neutro (a 25 °C) · pH &gt; 7: básico</div><p>Não misture produtos domésticos de limpeza: combinações como água sanitária com ácidos ou amônia podem liberar gases tóxicos. Siga rótulos e orientações de segurança.</p>`, q: () => [T('O número atômico Z corresponde ao número de:', 'Prótons', ['Nêutrons', 'Prótons + nêutrons', 'Moléculas'], 'Z identifica o elemento.'), T('Isótopos são átomos com:', 'Mesmo número de prótons e diferentes nêutrons', ['Mesmo número de nêutrons e prótons diferentes', 'Mesma massa sempre', 'Cargas sempre diferentes'], 'Mesmo elemento químico.'), T('Uma solução com pH 3 é:', 'Ácida', ['Neutra', 'Básica', 'Necessariamente salina'], 'pH abaixo de 7 indica acidez.'), T('Na neutralização entre ácido e base formam-se, em geral:', 'Sal e água', ['Oxigênio e hidrogênio', 'Somente gás carbônico', 'Metal e oxigênio'], 'Reação ácido-base.')]},
+      {s: 'qui', t: 'Química orgânica: carbono, cadeias e funções', h: `<p>A Química Orgânica estuda principalmente compostos de carbono. O carbono é tetravalente e pode formar cadeias abertas, fechadas, normais, ramificadas, saturadas ou insaturadas.</p><h2>Hidrocarbonetos</h2><p>Alcanos têm ligações simples; alcenos têm ao menos uma dupla; alcinos têm ao menos uma tripla; aromáticos incluem anéis como o benzeno. A nomenclatura considera número de carbonos, tipo de ligação e ramificações.</p><h2>Funções orgânicas</h2><p>Álcool: hidroxila ligada a carbono saturado; fenol: hidroxila ligada diretamente ao anel aromático; éter: oxigênio entre carbonos; aldeído: carbonila terminal; cetona: carbonila interna; ácido carboxílico: grupo –COOH; éster: –COO–; amina: derivada da amônia; amida: carbonila ligada a nitrogênio.</p><h2>Isomeria e materiais</h2><p>Isômeros têm mesma fórmula molecular e estruturas diferentes. Isomeria plana envolve diferença de cadeia, posição, função ou compensação; espacial envolve arranjo tridimensional, como cis-trans e enantiômeros.</p><p>Petróleo, gás natural e carvão são fontes de hidrocarbonetos. Polímeros são macromoléculas formadas por monômeros; podem ser naturais ou sintéticos. Avalie impactos ambientais, reciclagem e descarte.</p>`, q: () => [T('O carbono normalmente realiza quantas ligações covalentes?', 'Quatro', ['Duas', 'Três', 'Seis'], 'É tetravalente.'), T('Qual grupo caracteriza ácidos carboxílicos?', '–COOH', ['–OH isolado', '–CHO', '–NH₂'], 'Grupo carboxila.'), T('Alcenos apresentam ao menos uma ligação:', 'Dupla entre carbonos', ['Tripla entre carbonos', 'Iônica', 'Metálica'], 'Sufixo -eno.'), T('Isômeros possuem:', 'Mesma fórmula molecular e estruturas diferentes', ['Fórmulas moleculares sempre diferentes', 'Mesma estrutura em qualquer caso', 'Massas atômicas diferentes'], 'Definição de isomeria.')]},
+      {s: 'qui', t: 'Oxirredução, eletrólise e radioatividade', h: `<p>Oxidação corresponde ao aumento do número de oxidação (perda de elétrons); redução corresponde à diminuição do NOX (ganho de elétrons). O agente oxidante provoca oxidação e sofre redução; o redutor provoca redução e sofre oxidação.</p><h2>Pilhas e potenciais</h2><p>Em pilhas espontâneas, oxidação ocorre no ânodo e redução no cátodo. Elétrons percorrem o circuito externo do ânodo para o cátodo. O potencial padrão da célula pode ser calculado por E° = E°red(cátodo) − E°red(ânodo).</p><h2>Eletrólise</h2><p>Processo não espontâneo provocado por corrente elétrica. Também ocorre oxidação no ânodo e redução no cátodo, mas a fonte externa força a reação.</p><h2>Radioatividade</h2><p>Emissão alfa reduz A em 4 e Z em 2; emissão beta menos mantém A e aumenta Z em 1; emissão gama é radiação eletromagnética e não altera A nem Z. Meia-vida é o tempo para a quantidade de núcleos instáveis cair à metade.</p><p>Radioisótopos têm aplicações em diagnóstico, tratamento, pesquisa e datação, mas exigem proteção contra exposição e descarte controlado.</p>`, q: () => [T('Oxidação significa:', 'Aumento do NOX e perda de elétrons', ['Diminuição do NOX e ganho de elétrons', 'Ausência de elétrons', 'Apenas dissolução'], 'LEO: perde elétrons oxida.'), T('Em uma pilha, a oxidação ocorre no:', 'Ânodo', ['Cátodo', 'Eletrólito sempre', 'Fio externo'], 'Ânodo é o eletrodo de oxidação.'), T('Na emissão alfa, o número de massa:', 'Diminui em 4', ['Aumenta em 4', 'Não muda', 'Diminui em 1'], 'Partícula alfa contém 2 prótons e 2 nêutrons.'), T('Após duas meias-vidas, resta da amostra inicial:', 'Um quarto', ['Metade', 'Um oitavo', 'Tudo'], 'Metade da metade.')]},
+      {s: 'bio', t: 'Ecologia: populações, energia e produtividade', h: `<p>Habitat é o local onde a espécie vive; nicho é seu modo de vida e papel ecológico. População reúne indivíduos da mesma espécie em uma área; comunidade reúne populações; ecossistema inclui comunidade e fatores abióticos; biosfera reúne os ecossistemas da Terra.</p><h2>Populações</h2><p>Tamanho populacional varia por natalidade, mortalidade, imigração e emigração. Recursos, competição, predadores, doenças e clima regulam o crescimento. Capacidade de suporte é o limite aproximado de indivíduos que o ambiente sustenta.</p><h2>Energia e matéria</h2><p>Produtores formam matéria orgânica; consumidores obtêm energia alimentando-se; decompositores reciclam nutrientes. A energia flui e diminui a cada nível trófico; matéria circula nos ciclos biogeoquímicos.</p><p>Produtividade primária bruta é a energia fixada pelos produtores; produtividade primária líquida desconta a respiração. Cadeias alimentares se conectam em teias.</p>`, q: () => [T('Nicho ecológico descreve:', 'O papel e modo de vida de uma espécie', ['Somente o endereço físico', 'Apenas o clima do planeta', 'O conjunto de todos os biomas'], 'Inclui recursos utilizados e interações.'), T('A capacidade de suporte é:', 'População que o ambiente consegue sustentar aproximadamente', ['Número de espécies extintas', 'Taxa de fotossíntese de uma planta', 'Quantidade de chuva'], 'Depende dos recursos e condições ambientais.'), T('A energia nos níveis tróficos:', 'Diminui ao longo da cadeia', ['Aumenta sempre', 'É reciclada integralmente', 'Não se transforma'], 'Parte é dissipada como calor em cada transferência.'), T('Produtividade primária líquida é:', 'Produtividade bruta menos respiração dos produtores', ['Bruta mais respiração', 'Respiração dos consumidores', 'Energia dos decompositores apenas'], 'NPP = GPP − respiração.')]},
+      {s: 'bio', t: 'Poluição, conservação e alternativas energéticas', h: `<p>Poluição pode atingir ar, água e solo, além de gerar ruído, luz excessiva e resíduos visuais. Poluentes podem ser químicos, físicos ou biológicos. Seus efeitos incluem doenças, perda de biodiversidade, eutrofização, chuva ácida e aquecimento global.</p><h2>Impactos e soluções</h2><p>Eutrofização ocorre pelo excesso de nutrientes na água, favorecendo algas e reduzindo oxigênio dissolvido. Bioacumulação é acúmulo de substâncias em organismos; biomagnificação é aumento da concentração ao longo dos níveis tróficos.</p><p>Conservação combina unidades protegidas, restauração, corredores ecológicos, uso sustentável, fiscalização e participação comunitária. Biodiversidade inclui diversidade genética, de espécies e de ecossistemas.</p><h2>Matriz energética</h2><p>Solar, eólica, hidráulica e biomassa são renováveis, mas também têm impactos. Combustíveis fósseis são não renováveis e emitem gases de efeito estufa. Eficiência energética, transporte coletivo, armazenamento e planejamento reduzem impactos.</p>`, q: () => [T('Eutrofização está associada a:', 'Excesso de nutrientes em corpos d’água', ['Ausência total de sais', 'Aumento da salinidade do solo apenas', 'Redução de algas por falta de luz'], 'Nutrientes estimulam proliferação de algas.'), T('Biomagnificação é:', 'Aumento da concentração de contaminante nos níveis tróficos superiores', ['Diminuição de energia no Sol', 'Acúmulo apenas no solo', 'Decomposição de plástico'], 'Contaminantes persistentes se concentram nos predadores.'), T('Qual fonte é renovável?', 'Eólica', ['Carvão mineral', 'Petróleo', 'Gás natural'], 'Usa o vento.'), T('Conservação da biodiversidade inclui:', 'Proteção de habitats e uso sustentável', ['Remoção de todos os predadores', 'Fragmentação de florestas', 'Introdução indiscriminada de espécies exóticas'], 'Conservar ecossistemas e diversidade.')]},
+      {s: 'bio', t: 'Fisiologia humana: digestão, circulação e respiração', h: `<h2>Sistema digestório</h2><p>Digestão transforma alimentos em moléculas absorvíveis. Boca inicia digestão mecânica e química; estômago atua com ácido e enzimas; intestino delgado realiza a maior parte da digestão final e absorção; intestino grosso absorve água e forma fezes. Fígado produz bile; pâncreas libera enzimas e bicarbonato.</p><h2>Sistema circulatório</h2><p>Coração tem quatro câmaras. O lado direito envia sangue aos pulmões (circulação pulmonar); o esquerdo envia ao corpo (sistêmica). Artérias levam sangue para fora do coração; veias trazem de volta; capilares permitem trocas.</p><h2>Sistema respiratório</h2><p>Ar percorre vias respiratórias até alvéolos. Trocas gasosas ocorrem por difusão: oxigênio entra no sangue e gás carbônico sai. Diafragma e músculos intercostais alteram o volume torácico.</p><p>Os sistemas trabalham integrados: digestório fornece nutrientes, respiratório fornece O₂ e circulatório distribui substâncias.</p>`, q: () => [T('A maior parte da absorção de nutrientes ocorre no:', 'Intestino delgado', ['Estômago', 'Esôfago', 'Intestino grosso'], 'Vilosidades ampliam a superfície de absorção.'), T('Artérias são vasos que:', 'Levam sangue para fora do coração', ['Sempre transportam sangue rico em oxigênio', 'Levam sangue ao coração', 'Não possuem paredes'], 'A definição depende do sentido do fluxo.'), T('As trocas gasosas pulmonares ocorrem principalmente nos:', 'Alvéolos', ['Brônquios principais', 'Seios nasais', 'Laringe'], 'Alvéolos têm paredes finas e muitos capilares.'), T('O diafragma durante a inspiração:', 'Contrai e desce', ['Relaxa e sobe', 'Fecha a traqueia', 'Interrompe o fluxo sanguíneo'], 'Aumenta o volume da caixa torácica.')]},
+      {s: 'bio', t: 'Sistemas nervoso e endócrino, reprodução e saúde', h: `<h2>Sistema nervoso</h2><p>Neurônios recebem e transmitem impulsos. Sistema nervoso central: encéfalo e medula; periférico: nervos e gânglios. Sinapses permitem comunicação química ou elétrica. Substâncias psicoativas alteram a atividade do sistema nervoso e podem causar dependência e prejuízos.</p><h2>Sistema endócrino</h2><p>Glândulas liberam hormônios no sangue. Hipófise coordena várias funções; tireoide regula metabolismo; pâncreas produz insulina e glucagon; suprarrenais produzem hormônios ligados ao estresse. Feedback negativo ajuda a manter a homeostase.</p><h2>Reprodução e prevenção</h2><p>Gametas são produzidos por meiose; fecundação forma zigoto. Ciclo menstrual envolve variações hormonais e ovulação. Métodos contraceptivos incluem barreira, hormonais, DIU e métodos comportamentais; preservativos também reduzem risco de ISTs. Vacinas, testagem, tratamento e informação são medidas preventivas.</p><p>Imunidade inata é resposta inicial e inespecífica; adaptativa é específica e gera memória. Vacinas estimulam imunidade ativa; soros fornecem anticorpos prontos (imunidade passiva).</p>`, q: () => [T('A insulina é produzida pelo:', 'Pâncreas', ['Fígado', 'Pulmão', 'Rim'], 'Células beta das ilhotas pancreáticas.'), T('A vacinação promove, em geral:', 'Imunidade ativa', ['Imunidade passiva por anticorpos prontos', 'Ausência de resposta imune', 'Apenas imunidade inata'], 'O próprio organismo produz resposta e memória.'), T('Qual método também ajuda a reduzir transmissão de ISTs?', 'Preservativo', ['Pílula anticoncepcional', 'DIU de cobre', 'Tabelinha'], 'Métodos hormonais e DIU não protegem contra ISTs.'), T('A meiose é importante porque:', 'Forma gametas com metade do número de cromossomos', ['Duplica o número cromossômico em gametas', 'Produz células idênticas somáticas', 'Impede variabilidade'], 'A fecundação restaura o número diploide.')]},
+      {s: 'bio', t: 'Genética: heredogramas, alelos e grupos sanguíneos', h: `<p>Genótipo é a constituição genética; fenótipo é a característica observável resultante da interação entre genes e ambiente. Alelos são versões de um gene. Homozigoto possui alelos iguais; heterozigoto, diferentes.</p><h2>Herança</h2><p>Dominância completa: o heterozigoto manifesta o alelo dominante. Ausência de dominância pode produzir fenótipo intermediário (dominância incompleta) ou expressão simultânea (codominância). Alelos letais alteram proporções esperadas. Polialelia ocorre quando há mais de dois alelos possíveis na população.</p><h2>Heredogramas</h2><p>Quadrado representa indivíduo masculino; círculo, feminino; símbolo preenchido indica característica. Observe gerações, indivíduos afetados e relações familiares para inferir padrão dominante, recessivo ou ligado ao sexo.</p><h2>ABO e Rh</h2><p>No sistema ABO, Iᴬ e Iᴮ são codominantes e i é recessivo. A: IᴬIᴬ/Iᴬi; B: IᴮIᴮ/Iᴮi; AB: IᴬIᴮ; O: ii. O fator Rh é frequentemente modelado como D dominante sobre d. Compatibilidade transfusional exige avaliação do sistema ABO, Rh e testes laboratoriais.</p>`, q: () => [T('Fenótipo é:', 'Característica observável', ['Conjunto de alelos apenas', 'Número de cromossomos', 'Uma mutação obrigatória'], 'Fenótipo resulta de genes e ambiente.'), T('No sistema ABO, os alelos Iᴬ e Iᴮ são:', 'Codominantes', ['Recessivos entre si', 'Sempre letais', 'Idênticos'], 'Ambos se expressam no tipo AB.'), T('Genótipo ii no sistema ABO corresponde ao tipo:', 'O', ['A', 'B', 'AB'], 'ii não produz antígeno A nem B.'), T('Um indivíduo heterozigoto possui:', 'Dois alelos diferentes para um gene', ['Dois alelos iguais', 'Nenhum alelo', 'Quatro cromossomos sexuais'], 'Hetero = diferente.')]},
+      {s: 'his', t: 'Revolução Industrial, liberalismo e movimentos sociais', h: `<p>A industrialização começou na Inglaterra no século XVIII e transformou produção, trabalho, cidades e relações sociais. Máquinas, carvão, fábricas, divisão do trabalho e expansão dos mercados alteraram a economia.</p><h2>Ideias e conflitos</h2><p>Liberalismo defendia liberdades individuais, propriedade privada e limites ao poder estatal. Socialismos criticaram desigualdades do capitalismo; o marxismo analisou luta de classes e exploração do trabalho. Anarquismos criticaram hierarquias e Estado. Sindicatos e movimentos operários reivindicaram direitos.</p><h2>Século XIX</h2><p>Nacionalismo e unificações da Itália e Alemanha reorganizaram territórios. Capitalismo monopolista concentrou empresas e capitais. Imperialismo ampliou dominação econômica e política sobre regiões da África e Ásia.</p><p>Analise fontes históricas considerando autoria, contexto, interesses e público. Evite tratar ideias e processos como se fossem iguais em todos os países.</p>`, q: () => [T('A Revolução Industrial começou na:', 'Inglaterra', ['França', 'Rússia', 'Brasil'], 'No século XVIII.'), T('O movimento operário surgiu principalmente em resposta:', 'Às condições de trabalho e desigualdades da industrialização', ['À expansão do feudalismo', 'À ausência de cidades', 'À invenção da agricultura'], 'Trabalhadores organizaram associações e sindicatos.'), T('O nacionalismo do século XIX contribuiu para:', 'Processos de unificação e formação de Estados nacionais', ['Fim imediato dos Estados', 'Desaparecimento das fronteiras', 'Restauração do Império Romano'], 'Itália e Alemanha são exemplos.'), T('Imperialismo do século XIX envolveu:', 'Dominação e exploração de territórios, especialmente na África e Ásia', ['Apenas comércio igualitário', 'Fim da competição entre potências', 'Descolonização completa'], 'Potências disputavam matérias-primas, mercados e influência.')]},
+      {s: 'his', t: 'Era Napoleônica, independências e formação do Brasil', h: `<p>A Revolução Francesa derrubou estruturas do Antigo Regime. Napoleão Bonaparte consolidou poder, promoveu reformas administrativas e jurídicas e expandiu guerras pela Europa. O Bloqueio Continental tentou enfraquecer a Inglaterra.</p><h2>América e Brasil</h2><p>Independências americanas foram processos diversos, ligados a ideias iluministas, conflitos coloniais e interesses locais. A transferência da corte portuguesa para o Rio de Janeiro em 1808 abriu portos e alterou a administração colonial.</p><p>A Independência do Brasil, em 1822, manteve a monarquia e grande parte das estruturas sociais. O Primeiro Reinado enfrentou conflitos políticos e terminou com a abdicação de D. Pedro I em 1831. O Período Regencial teve revoltas e disputas sobre centralização.</p><h2>Segundo Reinado</h2><p>Expansão cafeeira, imigração, Guerra do Paraguai, debates abolicionistas e crise da monarquia marcaram o período. A Lei Áurea aboliu legalmente a escravidão em 1888, sem garantir integração social e econômica aos libertos.</p>`, q: () => [T('O Bloqueio Continental napoleônico buscava enfraquecer:', 'Inglaterra', ['Portugal apenas', 'Rússia apenas', 'Brasil independente'], 'Napoleão tentou impedir comércio europeu com os britânicos.'), T('A corte portuguesa chegou ao Brasil em:', '1808', ['1500', '1822', '1889'], 'Fugindo das invasões napoleônicas.'), T('A Independência do Brasil ocorreu em:', '1822', ['1808', '1831', '1888'], 'Proclamada por D. Pedro.'), T('A Lei Áurea foi assinada em:', '1888', ['1822', '1850', '1889'], 'Aboliu juridicamente a escravidão, sem resolver desigualdades estruturais.')]},
+      {s: 'his', t: 'Escravidão, revoltas coloniais e Primeira República', h: `<p>A escravidão indígena e africana sustentou atividades econômicas coloniais. O tráfico transatlântico deslocou milhões de africanos à força. Pessoas escravizadas resistiram por fugas, quilombos, revoltas, negociações e preservação cultural.</p><h2>Crise colonial</h2><p>Revoltas como Inconfidência Mineira e Conjuração Baiana expressaram projetos distintos e críticas ao domínio português. A chegada da corte e a abertura dos portos aceleraram a crise do sistema colonial.</p><h2>República</h2><p>A Proclamação da República ocorreu em 1889. Na Primeira República, oligarquias regionais, coronelismo, voto aberto e política dos governadores limitaram a participação política. A economia dependia fortemente do café, e ocorreram conflitos sociais e movimentos populares.</p><p>Industrialização inicial, urbanização e imigração transformaram relações de trabalho. A cidadania era restrita e desigual; a abolição não foi acompanhada de políticas amplas de reparação e inclusão.</p>`, q: () => [T('Quilombos foram:', 'Comunidades formadas sobretudo por pessoas negras que resistiam à escravidão', ['Fábricas de açúcar', 'Órgãos do governo colonial', 'Tratados comerciais'], 'Representavam resistência e autonomia.'), T('A Proclamação da República no Brasil ocorreu em:', '1889', ['1822', '1888', '1930'], 'Fim da monarquia.'), T('Coronelismo relacionava-se a:', 'Poder local de grandes proprietários e controle político-eleitoral', ['Voto secreto universal', 'Sindicatos nacionais', 'Fim das oligarquias'], 'Práticas de mando local e clientelismo.'), T('A abolição em 1888:', 'Não eliminou automaticamente desigualdades e exclusão social', ['Garantiu terra e renda a todos os libertos', 'Criou igualdade econômica imediata', 'Acabou com o racismo'], 'A liberdade legal não veio acompanhada de inclusão estrutural.')]},
+      {s: 'geo', t: 'Geopolítica, Estado, território e conflitos', h: `<p>Estado é uma organização político-jurídica com população, território e soberania. Nação envolve identidade e sentimento de pertencimento; país é o território associado a um Estado. Governo é o grupo que exerce temporariamente o poder.</p><h2>Território e poder</h2><p>Território é espaço apropriado e controlado por relações de poder. Fronteiras podem mudar por guerras, tratados, movimentos separatistas e processos de integração. Geopolítica analisa disputas por território, recursos, rotas, influência e segurança.</p><p>Conflitos podem envolver nacionalismos, etnias, religião, recursos naturais, desigualdade e heranças coloniais. Analise atores, escalas, causas históricas e interesses sem reduzir conflitos complexos a uma única causa.</p><h2>Planejamento territorial</h2><p>Políticas de infraestrutura, zoneamento, saneamento, habitação e conservação alteram a organização do espaço. A concentração de renda e serviços produz desigualdades regionais e intraurbanas.</p>`, q: () => [T('Soberania é:', 'Poder do Estado de exercer autoridade em seu território sem subordinação externa', ['Identidade cultural de uma população', 'Apenas o tamanho do território', 'O grupo que ocupa o governo por um mês'], 'É elemento central do Estado.'), T('Geopolítica estuda principalmente:', 'Relações de poder e disputas no espaço geográfico', ['Somente relevo e clima', 'Apenas mapas físicos', 'A composição química do solo'], 'Considera território, recursos e influência.'), T('Uma fronteira pode mudar por:', 'Guerras, tratados e processos políticos', ['Somente terremotos', 'Apenas mudanças climáticas', 'Variação diária da população'], 'Fronteiras são construções históricas e políticas.'), T('Planejamento territorial pode envolver:', 'Habitação, transporte, saneamento e uso do solo', ['Somente previsão do tempo', 'Apenas exportações', 'Exclusivamente turismo'], 'Políticas públicas organizam o espaço.')]},
+      {s: 'geo', t: 'Industrialização, urbanização e redes', h: `<p>Industrialização transforma a estrutura produtiva, atrai trabalhadores e reorganiza cidades. Metropolização ocorre quando uma metrópole articula municípios e atividades em uma região. Conurbação é a união física de manchas urbanas.</p><h2>Problemas e desigualdades</h2><p>Segregação socioespacial distribui grupos sociais de forma desigual no espaço. Déficits de moradia, saneamento, mobilidade, áreas verdes e serviços atingem mais intensamente populações vulneráveis. Gentrificação pode elevar preços e deslocar moradores.</p><h2>Redes</h2><p>Transportes e telecomunicações conectam lugares e fluxos de pessoas, mercadorias, capitais e informação. A infraestrutura é desigual e influencia competitividade e acesso a oportunidades.</p><p>Globalização não elimina diferenças territoriais: algumas regiões concentram sedes, tecnologia e serviços avançados; outras recebem etapas produtivas de menor remuneração ou ficam pouco conectadas.</p>`, q: () => [T('Conurbação é:', 'União física de áreas urbanas de municípios vizinhos', ['Separação entre cidades por uma floresta', 'Migração campo-cidade', 'Crescimento apenas vertical'], 'Manchas urbanas se encontram.'), T('Segregação socioespacial indica:', 'Distribuição desigual de grupos e oportunidades no espaço', ['Mistura igualitária de renda', 'Ausência de desigualdade', 'Apenas crescimento populacional'], 'Expressa desigualdade territorial.'), T('Gentrificação pode provocar:', 'Valorização imobiliária e deslocamento de moradores de menor renda', ['Queda obrigatória dos aluguéis', 'Fim da especulação', 'Desindustrialização rural'], 'Mudanças urbanas podem expulsar moradores.'), T('Redes de transporte e comunicação:', 'Organizam fluxos e conectam territórios de forma desigual', ['Eliminam todas as distâncias', 'Não influenciam a economia', 'Existem apenas em metrópoles'], 'Infraestrutura altera acessibilidade e integração.')]},
+      {s: 'geo', t: 'Questão agrária, agronegócio e população', h: `<p>A estrutura agrária descreve distribuição e tamanho das propriedades. Concentração fundiária significa grande parcela da terra em poucas mãos. Agricultura familiar, agronegócio, povos tradicionais e trabalhadores rurais apresentam formas diversas de uso e relação com a terra.</p><h2>Modernização e impactos</h2><p>Máquinas, sementes, fertilizantes, irrigação e logística elevaram produtividade em várias áreas, mas podem ampliar dependência tecnológica, concentração, desmatamento e conflitos. Fronteira agrícola é área de expansão da produção agropecuária.</p><h2>População e território</h2><p>Transição demográfica envolve queda das taxas de mortalidade e natalidade em ritmos diferentes. Migrações podem ser motivadas por trabalho, estudo, conflitos, ambiente e redes familiares. Indicadores como expectativa de vida, fecundidade, estrutura etária e IDH ajudam a analisar condições sociais.</p><p>Territórios indígenas e tradicionais envolvem direitos, cultura, conservação e disputas por reconhecimento e recursos.</p>`, q: () => [T('Concentração fundiária significa:', 'Grande parte das terras sob controle de poucos proprietários', ['Distribuição igualitária de terras', 'Ausência de propriedades privadas', 'Uso exclusivo de terras urbanas'], 'Fundiária refere-se à propriedade da terra.'), T('Fronteira agrícola é:', 'Área de expansão da atividade agropecuária', ['Limite entre países necessariamente', 'Área sem atividade econômica', 'Fronteira marítima'], 'Pode envolver conversão de vegetação nativa.'), T('Transição demográfica envolve:', 'Mudanças nas taxas de mortalidade e natalidade ao longo do tempo', ['Apenas crescimento das cidades', 'Mudança de clima', 'Somente imigração'], 'Altera ritmo de crescimento e estrutura etária.'), T('A demarcação de terras indígenas relaciona-se a:', 'Direitos territoriais, culturais e constitucionais', ['Apenas turismo', 'Expansão urbana irrestrita', 'Privatização automática'], 'Reconhece direitos originários.')]},
+      {s: 'soc', t: 'Identidade, socialização, classes e divisão do trabalho', h: `<p>O ser humano é social: aprende linguagens, normas e valores em processos de socialização. Socialização primária ocorre sobretudo na infância e família; secundária ocorre em instituições, grupos, escola, trabalho e mídia.</p><h2>Identidade e cultura</h2><p>Identidades são construídas nas relações e podem envolver pertencimentos múltiplos. Cultura não é biologicamente determinada nem estática. Etnocentrismo julga outras culturas pelos padrões próprios; relativismo cultural procura compreender práticas em seus contextos.</p><h2>Classes e trabalho</h2><p>Classes sociais relacionam-se a posições na estrutura econômica, acesso a recursos e poder. Divisão social do trabalho distribui atividades e funções. Globalização e tecnologia reorganizam empregos, qualificações e cadeias produtivas.</p><p>Precarização pode envolver instabilidade, baixa proteção e transferência de riscos ao trabalhador. Trabalho análogo à escravidão envolve condições degradantes, jornada exaustiva, servidão por dívida ou restrição de liberdade, conforme a legislação.</p>`, q: () => [T('Socialização é o processo de:', 'Aprender normas, valores e modos de convivência', ['Nascer com uma profissão definida', 'Eliminar diferenças culturais', 'Apenas memorizar leis'], 'Ocorre ao longo da vida.'), T('Etnocentrismo é:', 'Julgar outras culturas a partir dos padrões da própria', ['Compreender contextos culturais', 'Reconhecer diversidade sem hierarquizar', 'Estudar apenas economia'], 'Pode gerar preconceito e discriminação.'), T('Divisão social do trabalho refere-se:', 'À distribuição de atividades e funções na sociedade', ['À separação de países por clima', 'Apenas ao trabalho doméstico', 'À ausência de especialização'], 'Relaciona-se à organização da produção.'), T('Trabalho análogo à escravidão pode incluir:', 'Condições degradantes e jornada exaustiva', ['Somente trabalho remoto', 'Qualquer emprego com uniforme', 'Todo trabalho informal automaticamente'], 'A caracterização depende das condições previstas em lei.')]},
+      {s: 'soc', t: 'Globalização, tecnologia, política e movimentos sociais', h: `<p>A globalização intensifica fluxos econômicos, culturais, tecnológicos e informacionais, mas seus benefícios e custos são distribuídos de modo desigual. Plataformas digitais alteram consumo, comunicação, trabalho e vigilância.</p><h2>Estado e representação</h2><p>O Estado organiza instituições e políticas públicas. Democracia envolve participação, direitos, pluralismo, eleições e controle do poder. Partidos agregam projetos e disputam representação; movimentos sociais mobilizam grupos para reivindicar direitos e mudanças.</p><p>Participação política inclui voto, conselhos, associações, sindicatos, movimentos, consultas públicas e fiscalização. Cidadania envolve direitos civis, políticos, sociais e culturais.</p><h2>Direitos e intolerância</h2><p>Direitos Humanos são universais e protegem dignidade e igualdade. Racismo, xenofobia, misoginia, LGBTfobia e intolerância religiosa violam direitos. Liberdade de expressão não elimina responsabilidade por discriminação ou violência.</p>`, q: () => [T('Movimentos sociais são formas de:', 'Ação coletiva para reivindicar direitos e mudanças', ['Atividade exclusiva de governos', 'Apenas campanhas comerciais', 'Organização de empresas para lucro'], 'Podem atuar em várias escalas.'), T('Democracia pressupõe:', 'Participação, direitos, pluralismo e controle do poder', ['Poder sem limites', 'Ausência de eleições e direitos', 'Governo hereditário obrigatório'], 'Instituições e participação são fundamentais.'), T('Cidadania envolve:', 'Direitos e deveres civis, políticos e sociais', ['Somente pagar impostos', 'Apenas votar', 'Somente nacionalidade formal'], 'É participação e acesso a direitos.'), T('A globalização digital:', 'Amplia conexões, mas também pode reproduzir desigualdades e vigilância', ['Elimina toda desigualdade', 'Impede circulação de informação', 'Afeta apenas países ricos'], 'Efeitos dependem de acesso, poder e regulação.')]},
+      {s: 'por', t: 'Norma, variação linguística e formação de palavras', h: `<p>A língua varia conforme região, grupo social, situação e época. Variedade não é sinônimo de erro. A norma-padrão é uma convenção valorizada em contextos formais, mas a adequação depende do gênero, interlocutor e objetivo.</p><h2>Oralidade e escrita</h2><p>Fala e escrita têm recursos e condições diferentes. A escrita pode representar pausas e entonação com pontuação, mas não é mera transcrição da fala. Ortografia segue convenções oficiais.</p><h2>Formação de palavras</h2><p>Derivação: prefixal (infeliz), sufixal (felizmente), parassintética (anoitecer), regressiva (pesca de pescar) e imprópria (o jantar). Composição: justaposição (guarda-chuva) e aglutinação (planalto). Estrutura: radical, afixos, desinências e vogal temática.</p><p>Flexão nominal expressa gênero e número; flexão verbal expressa pessoa, número, tempo, modo, aspecto e voz. Observe concordância e regência no contexto.</p>`, q: () => [T('A variação linguística:', 'Depende de região, grupo, situação e época', ['É sempre erro', 'Ocorre apenas na escrita', 'Deve ser eliminada'], 'Línguas são heterogêneas.'), T('A palavra “infelizmente” apresenta derivação:', 'Prefixal e sufixal', ['Parassintética obrigatoriamente', 'Regressiva', 'Por composição'], 'in- + feliz + -mente.'), T('“Guarda-chuva” é exemplo de:', 'Composição por justaposição', ['Aglutinação', 'Derivação regressiva', 'Parassíntese'], 'Os elementos permanecem reconhecíveis.'), T('A flexão verbal pode indicar:', 'Tempo, modo, pessoa, número, aspecto e voz', ['Somente gênero', 'Apenas plural', 'Somente grau'], 'São categorias verbais.')]},
+      {s: 'por', t: 'Sintaxe: coordenação, subordinação e período composto', h: `<p>Oração é enunciado organizado em torno de verbo ou locução verbal. Período simples tem uma oração; composto tem duas ou mais. Coordenação liga orações sintaticamente independentes; subordinação estabelece dependência sintática.</p><h2>Orações coordenadas</h2><p>Assindéticas não têm conjunção; sindéticas podem ser aditivas (e), adversativas (mas), alternativas (ou), conclusivas (portanto) e explicativas (porque/pois em certos usos).</p><h2>Orações subordinadas</h2><p>Substantivas exercem função típica de substantivo; adjetivas caracterizam um nome (restritivas ou explicativas); adverbiais expressam causa, consequência, condição, concessão, finalidade, tempo, comparação, conformidade ou proporção.</p><h2>Reorganização</h2><p>Ao reescrever períodos, preserve relações de sentido, referência pronominal, correlação verbal e pontuação. Conectivos orientam a lógica do texto; não são intercambiáveis em qualquer contexto.</p>`, q: () => [T('Em “Estudei, mas não passei”, a oração introduzida por “mas” é:', 'Coordenada sindética adversativa', ['Subordinada causal', 'Coordenada aditiva', 'Subordinada final'], 'Mas expressa oposição.'), T('Em “Embora estivesse cansado, continuou”, a oração inicial expressa:', 'Concessão', ['Causa', 'Finalidade', 'Consequência'], 'Embora introduz concessão.'), T('Período composto é aquele que apresenta:', 'Duas ou mais orações', ['Apenas um substantivo', 'Nenhum verbo', 'Somente uma oração'], 'Conte as orações pelo número de verbos/locuções, observando estruturas.'), T('“Portanto” costuma indicar:', 'Conclusão', ['Oposição', 'Condição', 'Concessão'], 'É conectivo conclusivo.')]},
+      {s: 'por', t: 'Gêneros textuais, argumentação e leitura crítica', h: `<p>Gênero textual é uma forma social de comunicação: notícia, reportagem, artigo de opinião, editorial, carta, anúncio, crônica, conto, meme, infográfico, postagem e outros. Identifique finalidade, público, suporte, linguagem e contexto.</p><h2>Argumentação</h2><p>Tese é a posição defendida. Argumentos sustentam a tese com dados, exemplos, comparações, explicações ou autoridades pertinentes. Contra-argumento considera posição divergente; refutação responde a ela. Diferencie fato verificável de opinião.</p><h2>Leitura crítica</h2><p>Inferência é conclusão apoiada em pistas do texto. Pressuposto é informação tomada como dada; subentendido depende do contexto. Ironia, humor e ambiguidade exigem considerar contexto e intenção. Textos multimodais combinam palavras, imagens, cores, gráficos e sons.</p><p>Verifique autoria, data, fonte, evidências e possíveis interesses. Um gráfico pode induzir erro por eixo truncado, escala irregular ou ausência de contexto.</p>`, q: () => [T('A tese em um artigo de opinião é:', 'A posição central defendida pelo autor', ['A lista de referências', 'O título obrigatoriamente', 'Uma informação sem relação com o tema'], 'Os argumentos sustentam a tese.'), T('Uma inferência deve ser:', 'Apoiada em pistas e informações do texto', ['Uma invenção sem evidência', 'Sempre uma opinião pessoal', 'Contrária ao texto'], 'Inferir não é adivinhar.'), T('Ao analisar um gráfico, é essencial verificar:', 'Escala, unidades, fonte e título', ['Apenas a cor das barras', 'Somente o tamanho da imagem', 'A fonte tipográfica'], 'A apresentação pode distorcer a interpretação.'), T('Fato e opinião se diferenciam porque:', 'Fato pode ser verificado; opinião expressa avaliação ou julgamento', ['Ambos são sempre comprováveis', 'Opinião nunca tem justificativa', 'Fato é sempre falso'], 'Avalie evidências e linguagem.')]},
+      {s: 'por', t: 'Literatura: Barroco, Realismo e contexto histórico', h: `<h2>Barroco</h2><p>Movimento dos séculos XVII e início do XVIII, marcado por contrastes, antíteses, conflitos entre corpo e alma, efemeridade, religiosidade e linguagem elaborada. Gregório de Matos destacou-se na poesia; Padre Antônio Vieira, nos sermões.</p><h2>Realismo</h2><p>No Brasil, marco convencional em 1881 com Memórias Póstumas de Brás Cubas, de Machado de Assis. Observa criticamente relações sociais, interesses, hipocrisia e psicologia das personagens, frequentemente com ironia e narradores complexos.</p><p>Em Portugal, Eça de Queirós é nome central do Realismo. O Naturalismo aproxima-se de explicações deterministas e observação de ambientes e comportamentos.</p><h2>Leitura literária</h2><p>Analise narrador, foco narrativo, personagens, tempo, espaço, linguagem, imagens, ritmo e contexto. Não reduza uma obra a uma etiqueta: observe como os recursos formais constroem sentidos.</p>`, q: () => [T('Uma marca recorrente do Barroco é:', 'Contraste e tensão entre opostos', ['Linguagem exclusivamente científica', 'Ausência de religiosidade', 'Rejeição de figuras de linguagem'], 'Antítese e paradoxo são frequentes.'), T('Autor de Memórias Póstumas de Brás Cubas:', 'Machado de Assis', ['José de Alencar', 'Castro Alves', 'Álvares de Azevedo'], 'Obra marco do Realismo brasileiro.'), T('O Realismo frequentemente enfatiza:', 'Crítica social e análise psicológica', ['Idealização sentimental como regra', 'Cavalaria medieval', 'Mitos greco-romanos apenas'], 'Observação crítica da sociedade.'), T('Naturalismo associa-se historicamente a:', 'Influências deterministas e observação de comportamentos e ambientes', ['Romance de cavalaria', 'Poesia trovadoresca', 'Arcadismo pastoril'], 'Vertente próxima ao Realismo.')]},
+      {s: 'ing', t: 'Inglês: gêneros, inferência, coesão e ponto de vista', h: `<p>Leia o texto em camadas: título e imagens antecipam tema; cognatos ajudam, mas cuidado com falsos cognatos; palavras-chave e conectivos revelam relações. Skimming busca ideia geral; scanning localiza informação específica.</p><h2>Referência e coesão</h2><p>Pronomes como it, they, them, this, that, which e who retomam ideias ou nomes. Conectivos: however (contraste), therefore (conclusão), although (concessão), because (causa), whereas (contraste), moreover (adição).</p><h2>Posicionamento</h2><p>Identifique opinião, evidência, intenção, público e tom. Palavras como must, should, may, might e could expressam obrigação, conselho ou possibilidade. Comparativos e superlativos ajudam a comparar informações.</p><p>Em textos multimodais, relacione legenda, escala, imagem e texto. Diferencie informação explícita de inferência e não traduza palavra por palavra se o contexto indicar outro sentido.</p>`, q: () => [T('“Although” expressa:', 'Concessão', ['Causa', 'Conclusão', 'Adição'], 'Significa embora.'), T('“Therefore” normalmente indica:', 'Conclusão ou consequência', ['Contraste', 'Condição', 'Tempo'], 'É equivalente a portanto.'), T('A estratégia scanning é usada para:', 'Localizar informação específica rapidamente', ['Entender cada palavra em detalhe', 'Traduzir o texto inteiro', 'Identificar apenas o autor'], 'Procura nomes, datas, números ou dados.'), T('“You should wear a helmet” expressa:', 'Conselho/recomendação', ['Obrigação legal absoluta sempre', 'Passado', 'Possibilidade remota'], 'Should costuma indicar conselho.')]},
+      {s: 'fil', t: 'Filosofia: conhecimento, ética e política', h: `<p>Filosofia investiga problemas por meio de conceitos, argumentos e questionamento crítico. Não é apenas opinião: exige razões, coerência e análise de pressupostos.</p><h2>Conhecimento</h2><p>Epistemologia pergunta o que podemos conhecer, como justificamos crenças e quais são os limites do conhecimento. Diferencie opinião, crença e conhecimento justificado. Racionalismo enfatiza a razão; empirismo destaca a experiência sensível; posições contemporâneas discutem linguagem, ciência e poder.</p><h2>Ética</h2><p>Ética reflete sobre ações, valores e vida boa. Éticas deontológicas enfatizam deveres e princípios; consequencialistas avaliam resultados; ética das virtudes considera caráter e hábitos. Dilemas morais exigem identificar envolvidos, valores e consequências.</p><h2>Política</h2><p>Filosofia política discute justiça, liberdade, igualdade, autoridade, contrato social e legitimidade do Estado. Compare argumentos de autores e contextos sem decorar nomes isolados.</p>`, q: () => [T('Epistemologia investiga:', 'Conhecimento e justificação das crenças', ['Somente formas de governo', 'A composição dos seres vivos', 'A estrutura das palavras'], 'É a área filosófica do conhecimento.'), T('Uma ética consequencialista avalia ações principalmente por:', 'Seus resultados ou consequências', ['Apenas a intenção', 'A tradição familiar', 'A origem geográfica'], 'O resultado tem papel central.'), T('Um argumento filosófico precisa de:', 'Razões que sustentem uma conclusão', ['Somente autoridade de quem fala', 'Uma frase longa', 'Uma opinião sem justificativa'], 'Argumentar é oferecer razões.'), T('Filosofia política discute:', 'Justiça, liberdade, poder e legitimidade do Estado', ['Apenas fenômenos climáticos', 'Somente gramática', 'A estrutura das células'], 'Questões sobre vida coletiva e poder.')]}
+    ];
+    L.push(...EXTRA);
+
+
+    // Exemplos cotidianos e glossário dos símbolos: acrescentados a cada aula.
+    const practicalExamples = {
+      'Geometria espacial': ['Uma caixa de sapatos é um paralelepípedo: para saber quanto papel a envolve, calcule a área total; para saber quanto cabe dentro, calcule o volume.', 'Exemplo: uma caixa de 4 cm × 3 cm × 2 cm tem volume 24 cm³. No cubo de aresta 3 cm, V = 3³ = 27 cm³.', 'No cilindro, uma lata com raio 3 cm e altura 10 cm tem V = π · 3² · 10 = 90π cm³.'],
+      'PA e PG': ['PA no cotidiano: uma pessoa guarda R$ 20 no primeiro mês e aumenta a economia em R$ 5 por mês: 20, 25, 30, 35…', 'PG no cotidiano: uma postagem que triplica o número de visualizações a cada hora segue uma PG de razão 3.', 'Na fórmula aₙ = a₁ + (n − 1) · r, aₙ é o termo procurado, a₁ é o primeiro termo, n é a posição e r é a razão da PA. Na PG, q é a razão multiplicativa.'],
+      'Análise combinatória': ['Looks: 3 camisetas e 2 calças permitem 3 · 2 = 6 combinações.', 'Fila: 3 pessoas podem formar 3! = 3 · 2 · 1 = 6 filas. Já escolher 2 representantes entre 5 não depende da ordem: é combinação.', 'Em A(n,p), n é o total de elementos e p é quantos serão escolhidos com ordem. Em C(n,p), a ordem não importa.'],
+      'Funções: 1º grau, exponencial e log': ['Táxi: bandeirada de R$ 6 mais R$ 2 por quilômetro. Para 4 km, f(4) = 2 · 4 + 6 = R$ 14.', 'Crescimento: 100 bactérias que dobram a cada hora tornam-se 200 após 1 hora e 400 após 2 horas.', 'Em f(x)=ax+b, x é a entrada, f(x) ou y é a saída, a é a taxa de variação e b é o valor inicial. Em f(x)=a·bˣ, a é o valor inicial e b é o fator de crescimento.'],
+      'Trigonometria': ['Uma escada de 5 m encostada na parede, com a base a 3 m da parede, alcança 4 m de altura: é o triângulo 3–4–5.', 'Se um poste tem 6 m e o Sol forma 45° com o chão, a sombra mede 6 m, pois tg 45° = 1.', 'Na figura, θ é o ângulo analisado; cateto oposto fica diante dele; cateto adjacente fica ao lado; hipotenusa é o maior lado e fica diante do ângulo de 90°.'],
+      'Geometria plana e semelhança': ['Piso retangular de 4 m por 3 m: área = 4 · 3 = 12 m². Um triângulo com base 6 m e altura 4 m tem área 12 m².', 'Ao ampliar uma foto para o dobro da largura e da altura, a área fica 4 vezes maior; o volume de um sólido ampliado na mesma escala fica 8 vezes maior.', 'Nas fórmulas, b é base menor ou base do retângulo/triângulo conforme o desenho; B é base maior do trapézio; h é altura; D e d são diagonais do losango; r é raio; R é raio maior.'],
+      'Termologia e calorimetria': ['Uma colher de metal esquenta ao ficar dentro de uma panela: isso é condução. A água circulando ao ferver é convecção. O calor do Sol chegando à Terra é irradiação.', 'Para aquecer 200 g de água em 10 °C, usando c = 1 cal/(g·°C), Q = 200 · 1 · 10 = 2.000 cal.', 'Em Q=m·c·ΔT, Q é calor trocado, m é massa, c é calor específico e ΔT é variação de temperatura. Em Q=m·L, L é calor latente da mudança de estado.'],
+      'Gases e termodinâmica': ['Ao apertar a saída de uma seringa tampada, o volume do ar diminui e a pressão aumenta: transformação aproximadamente isotérmica.', 'Uma panela de pressão fechada e aquecida aumenta a pressão interna porque o volume quase não muda.', 'Na equação P·V=n·R·T, P é pressão, V é volume, n é quantidade de matéria em mol, R é constante dos gases e T é temperatura em kelvin. Na 1ª lei, ΔU é variação da energia interna, Q é calor recebido e W é trabalho realizado pelo gás.'],
+      'Óptica geométrica': ['O retrovisor convexo mostra uma área maior atrás do carro, mas os veículos parecem menores. Uma colher pode formar imagens diferentes conforme o lado: côncavo ou convexo.', 'Uma pessoa a 2 m de um espelho plano vê sua imagem 2 m atrás dele; a distância pessoa-imagem é 4 m.', 'Em 1/f=1/p+1/p′, f é distância focal, p é distância do objeto e p′ é distância da imagem. Em n=c/v, n é índice de refração, c é velocidade da luz no vácuo e v é velocidade no meio.'],
+      'Ondas e som': ['Uma onda com comprimento de 2 m e frequência de 5 Hz tem velocidade v = 2 · 5 = 10 m/s.', 'O eco acontece quando o som reflete em uma parede distante. A sirene de uma ambulância parece mais aguda quando se aproxima por causa do efeito Doppler.', 'Em v=λ·f, v é velocidade, λ (lambda) é comprimento de onda e f é frequência. Em T=1/f, T é o período, isto é, o tempo de uma oscilação.'],
+      'Estequiometria e mol': ['Uma receita química balanceada funciona como uma receita culinária: os coeficientes indicam a proporção entre as quantidades de partículas/mol.', 'A água tem massa molar 18 g/mol. Portanto, 36 g de água correspondem a 2 mol.', 'Em n=m/M, n é quantidade de matéria em mol, m é massa em gramas e M é massa molar em g/mol. O coeficiente da equação balanceada indica a proporção em mol.'],
+      'Equilíbrio, pH e cinética': ['Um comprimido efervescente reage mais rápido em água morna e quando está triturado: temperatura e superfície de contato aumentam a velocidade.', 'Suco de limão é ácido (pH abaixo de 7); água pura é aproximadamente neutra (pH 7); sabão costuma ser básico (pH acima de 7).', 'Em Kc, os colchetes indicam concentração molar. Em pH=−log[H⁺], [H⁺] é a concentração de íons hidrogênio; pOH mede a concentração de OH⁻.'],
+      'Termoquímica e eletroquímica': ['A queima de madeira libera calor: é exotérmica. Derreter gelo absorve calor: é endotérmico.', 'Uma pilha de controle remoto transforma energia química em elétrica. Na eletrólise, a energia elétrica força uma transformação química.', 'Em ΔH=Hprodutos−Hreagentes, ΔH é a variação de entalpia. Na ddp=E°cátodo−E°ânodo, E° é o potencial-padrão de eletrodo.'],
+      'Ecologia e saúde': ['Em uma horta, alface é produtora; lagarta que come a alface é consumidora primária; pássaro que come a lagarta é consumidor secundário.', 'Vacina prepara o sistema imune antes do contato com o agente; soro fornece anticorpos prontos para uma ação imediata.', 'Exemplo de níveis ecológicos: vários indivíduos da mesma espécie de capivaras formam uma população; capivaras, plantas e aves juntas formam uma comunidade.'],
+      'Células, DNA e genética': ['Quando a pele cicatriza, células se dividem por mitose. A formação de óvulos e espermatozoides ocorre por meiose.', 'Se os pais são Aa e Aa, cada um pode transmitir A ou a. As combinações possíveis são AA, Aa, Aa e aa: 1 em 4 é aa.', 'A representa alelo dominante e a recessivo; AA e Aa expressam a característica dominante, enquanto aa expressa a recessiva.'],
+      'Iluminismo e revoluções (séc. XVIII-XIX)': ['Separação dos poderes: o Legislativo cria leis, o Executivo administra e o Judiciário julga se as leis foram respeitadas.', 'A Revolução Industrial mudou a produção: tecidos antes feitos artesanalmente passaram a ser produzidos em fábricas com máquinas.', 'Exemplo de ideia iluminista: limitar o poder do rei por leis e dividir o poder político, como defendia Montesquieu.'],
+      'Brasil: Império e República': ['Linha do tempo essencial: chegada da corte em 1808; Independência em 1822; Lei Áurea em 1888; República em 1889.', 'A política do café com leite é um exemplo de influência das oligarquias de São Paulo e Minas Gerais durante a Primeira República.', 'A CLT, criada durante a Era Vargas, reuniu normas relacionadas ao trabalho, como férias e jornada.'],
+      'Economia, globalização e população': ['Plantio de soja pertence ao setor primário; fabricação de óleo de soja, ao secundário; venda no supermercado, ao terciário.', 'Uma cidade com 20.000 habitantes em 10 km² tem densidade demográfica de 2.000 habitantes por km².', 'Em crescimento vegetativo = natalidade − mortalidade, as duas taxas são geralmente expressas por mil habitantes (‰). Densidade é população dividida pela área.'],
+      'Meio ambiente, energia e cartografia': ['Energia eólica usa o vento; solar usa a radiação do Sol; petróleo e carvão são fontes não renováveis.', 'Na escala 1:100.000, 1 cm no mapa representa 100.000 cm na realidade, ou 1 km. Assim, 3 cm representam 3 km.', 'Latitude mede a posição ao norte ou sul do Equador; longitude mede a posição a leste ou oeste de Greenwich.'],
+      'Cultura, trabalho e Estado': ['Uma pessoa aprende regras de convivência na família e na escola: isso é socialização.', 'Se alguém considera sua cultura superior e julga outra por seus próprios padrões, pratica etnocentrismo; compreender a outra cultura no contexto dela é relativismo cultural.', 'Exemplo dos três poderes: prefeitura executa políticas públicas; Câmara Municipal debate e aprova leis; Judiciário julga conflitos conforme a lei.'],
+      'Gramática e interpretação': ['Em “Os estudantes atentos chegaram cedo”, estudantes é substantivo, atentos é adjetivo, chegaram é verbo e cedo é advérbio.', '“Queria sair, mas estava chovendo”: mas conecta ideias em oposição. “Fiquei em casa porque chovia”: porque indica causa.', '“Estou morrendo de fome” é hipérbole; “seus olhos são estrelas” é metáfora; “corre como um raio” é comparação.'],
+      'Romantismo e Realismo': ['Um texto que idealiza um herói nacional e um amor impossível tende ao Romantismo; um texto que critica a hipocrisia social tende ao Realismo.', 'Machado de Assis usa ironia e análise psicológica; Castro Alves é associado à poesia condoreira e à crítica da escravidão.', 'Ao ler um trecho, observe se predominam emoção e idealização ou crítica social e análise objetiva.'],
+      'Estratégias de leitura e modais': ['Em uma notícia com título “New study reveals…”, o título e a imagem ajudam a prever o assunto antes de traduzir cada palavra.', '“You should study” significa “Você deveria estudar” (conselho); “You must stop” expressa obrigação forte.', 'Em “Maria bought a book. It is interesting”, it retoma book. Em “The students arrived. They are tired”, they retoma students.'],
+      'Conjuntos numéricos, razão e proporcionalidade': ['Uma receita para 4 pessoas usa 2 xícaras de arroz; para 8 pessoas, mantendo a proporção, serão 4 xícaras.', 'Se 5 cadernos custam R$ 30, cada caderno custa R$ 6; 8 cadernos custam R$ 48, mantendo o preço unitário.', 'Na porcentagem, 20% de R$ 150 corresponde a R$ 30. Para comparar variação percentual, use o valor inicial como base.'],
+      'Funções quadráticas, sistemas lineares e gráficos': ['Uma bola lançada para cima sobe, atinge uma altura máxima e desce: a altura em função do tempo pode ser representada por uma parábola.', 'Duas entradas de cinema e um lanche custam R$ 50; uma entrada e um lanche custam R$ 32. Chamando entrada de x e lanche de y, monte 2x+y=50 e x+y=32; a diferença dá x=18 e y=14.', 'Em f(x)=ax²+bx+c, a, b e c são coeficientes; x é a variável. Δ é o discriminante, usado para analisar as raízes.'],
+      'Probabilidade e estatística': ['Ao lançar uma moeda equilibrada, a chance de sair cara é 1 em 2, ou 50%.', 'A média das notas 6, 7 e 8 é 7; a mediana também é 7. Se as notas forem 2, 7 e 10, a mediana continua sendo 7.', 'Na probabilidade, casos favoráveis são os resultados desejados e casos possíveis são todos os resultados igualmente prováveis.'],
+      'Termologia: temperatura, calor e mudanças de estado': ['Um termômetro mede temperatura; uma colher aquecida pela sopa recebe energia térmica por condução.', 'Gelo derretendo a 0 °C recebe calor latente: a energia é usada na mudança de estado, não para aumentar a temperatura durante a fusão.', 'Em Q=m·c·ΔT, m é massa, c é calor específico e ΔT é variação de temperatura. Em Q=m·L, L é calor latente.'],
+      'Gases, trabalho e máquinas térmicas': ['O ar dentro de um pneu aquecido tende a exercer maior pressão se o volume permanecer praticamente constante.', 'Um motor de carro transforma parte do calor liberado pelo combustível em trabalho mecânico; outra parte é dissipada.', 'η=W/Qquente representa rendimento: η é eficiência, W é trabalho útil e Qquente é o calor recebido da fonte quente.'],
+      'Óptica geométrica: espelhos, refração e instrumentos': ['Uma lupa é uma lente convergente que pode ampliar uma imagem; o retrovisor convexo amplia o campo de visão.', 'Um lápis parcialmente mergulhado na água parece “quebrado” por causa da refração: a luz muda de velocidade e direção ao mudar de meio.', 'Na equação dos espelhos, f é foco, p é distância do objeto e p′ é distância da imagem; R é raio de curvatura e f=R/2.'],
+      'Ondulatória, som e acústica': ['O som não se propaga no vácuo, mas a luz do Sol chega à Terra porque é uma onda eletromagnética.', 'Uma nota musical mais aguda tem frequência maior. Dois instrumentos tocando a mesma nota podem ter timbres diferentes.', 'Em v=λ·f, v é velocidade, λ é comprimento de onda e f é frequência; T=1/f define o período.'],
+      'Matéria, misturas e separação de materiais': ['Água com sal é mistura homogênea; água e óleo formam mistura heterogênea.', 'Filtro de café separa sólido de líquido por filtração; água e areia podem ser separadas por decantação após repouso.', 'Em densidade d=m/V, d é densidade, m é massa e V é volume.'],
+      'Estrutura atômica, fórmulas e funções inorgânicas': ['O sal de cozinha (NaCl) é um composto iônico; a água (H₂O) é uma substância molecular.', 'Um átomo neutro com 11 prótons tem 11 elétrons. Se perder 1 elétron, forma um cátion de carga +1.', 'Z representa número atômico (prótons); A é número de massa (prótons + nêutrons); n representa nêutrons.'],
+      'Química orgânica: carbono, cadeias e funções': ['Etanol, presente em bebidas alcoólicas e combustível, tem grupo funcional álcool; ácido acético, do vinagre, é um ácido carboxílico.', 'O carbono pode formar cadeias abertas, fechadas, ramificadas e ligações simples ou múltiplas.', 'Na fórmula estrutural, cada traço representa uma ligação covalente; a quantidade de ligações do carbono normalmente totaliza quatro.'],
+      'Oxirredução, eletrólise e radioatividade': ['Ferrugem é resultado de processos de oxidação do ferro. Em uma pilha, a reação redox espontânea gera corrente elétrica.', 'Uma substância radioativa com meia-vida de 10 dias fica com metade da quantidade inicial após 10 dias e um quarto após 20 dias.', 'Nox é número de oxidação; oxidação significa aumento do Nox e perda de elétrons; redução significa diminuição do Nox e ganho de elétrons.'],
+      'Ecologia: populações, energia e produtividade': ['Em uma cadeia capim → gafanhoto → sapo, o capim é produtor, o gafanhoto é consumidor primário e o sapo é consumidor secundário.', 'Se produtores armazenam 10.000 kcal, uma transferência aproximada de 10% disponibiliza 1.000 kcal ao próximo nível trófico.', 'NPP ou produtividade primária líquida corresponde à energia que sobra após a respiração dos produtores.'],
+      'Poluição, conservação e alternativas energéticas': ['Esgoto sem tratamento em um rio pode causar eutrofização; fumaça de veículos contribui para poluição atmosférica.', 'Uma área de preservação permanente protege recursos naturais, como margens de rios e nascentes.', 'Comparar fontes de energia exige observar renovabilidade, emissão de poluentes, custo, impactos locais e regularidade de fornecimento.'],
+      'Fisiologia humana: digestão, circulação e respiração': ['A digestão começa na boca, com mastigação e ação da saliva; nutrientes são absorvidos principalmente no intestino delgado.', 'O coração bombeia sangue: o lado direito envia sangue aos pulmões e o esquerdo envia sangue ao corpo.', 'Na respiração, o oxigênio passa dos alvéolos para o sangue e o gás carbônico faz o caminho inverso.'],
+      'Sistemas nervoso e endócrino, reprodução e saúde': ['Ao tocar algo quente, receptores e neurônios participam de uma resposta rápida de retirada da mão.', 'A insulina ajuda a reduzir a glicose no sangue; é um hormônio produzido pelo pâncreas.', 'Fecundação é a união dos gametas; métodos contraceptivos e preservativos ajudam no planejamento reprodutivo e na prevenção de ISTs.'],
+      'Genética: heredogramas, alelos e grupos sanguíneos': ['Em um heredograma, quadrados geralmente representam homens e círculos mulheres; símbolos preenchidos indicam indivíduos com a característica analisada.', 'No sistema ABO, indivíduos do tipo AB possuem antígenos A e B; tipo O não apresenta esses antígenos nas hemácias.', 'Em um cruzamento Aa × aa, metade dos descendentes esperados é Aa e metade aa, considerando probabilidade igual dos gametas.'],
+      'Revolução Industrial, liberalismo e movimentos sociais': ['A mecanização têxtil aumentou a produção nas fábricas, mas também gerou jornadas longas e condições precárias para muitos operários.', 'O liberalismo econômico defende liberdade de iniciativa e mercado; movimentos operários reivindicaram melhores salários e condições.', 'Exemplo histórico: sindicatos organizaram trabalhadores para negociar direitos coletivamente.'],
+      'Era Napoleônica, independências e formação do Brasil': ['O Bloqueio Continental tentou impedir países europeus de negociar com a Inglaterra; a transferência da corte portuguesa para o Brasil ocorreu no contexto das guerras napoleônicas.', 'A abertura dos portos em 1808 permitiu comércio direto com nações amigas de Portugal.', 'A Independência em 1822 manteve Dom Pedro I como imperador e não eliminou imediatamente desigualdades sociais e escravidão.'],
+      'Escravidão, revoltas coloniais e Primeira República': ['A Lei Áurea aboliu legalmente a escravidão em 1888, mas não garantiu políticas amplas de integração social e econômica aos libertos.', 'A Revolta da Vacina, em 1904, ocorreu no contexto de reformas urbanas autoritárias e medidas sanitárias no Rio de Janeiro.', 'Coronelismo e voto de cabresto expressavam o poder local de oligarquias durante a Primeira República.'],
+      'Geopolítica, Estado, território e conflitos': ['Fronteiras delimitam territórios sob soberania de Estados; disputas territoriais podem envolver recursos, identidade e segurança.', 'A ONU atua como organização internacional para cooperação e diplomacia, embora dependa dos Estados-membros.', 'Ao analisar um conflito, identifique atores, interesses, território envolvido, recursos e contexto histórico.'],
+      'Industrialização, urbanização e redes': ['Uma fábrica que transforma minério em aço pertence ao setor secundário; transporte e comércio integram redes do setor terciário.', 'A expansão urbana sem planejamento pode ampliar deslocamentos, segregação socioespacial e pressão sobre saneamento.', 'Uma rede logística conecta fornecedores, fábricas, centros de distribuição e consumidores.'],
+      'Questão agrária, agronegócio e população': ['Uma propriedade com produção mecanizada em grande escala pode integrar o agronegócio; agricultura familiar também participa da produção de alimentos.', 'Concentração fundiária significa que grande parte das terras está nas mãos de poucos proprietários.', 'Êxodo rural é a migração do campo para a cidade, muitas vezes associada a trabalho, serviços e mecanização agrícola.'],
+      'Identidade, socialização, classes e divisão do trabalho': ['A língua, os hábitos e as regras aprendidos na família e na escola participam da construção da identidade social.', 'Na divisão do trabalho, diferentes pessoas ou setores realizam tarefas especializadas que se complementam.', 'Classe social pode ser analisada considerando renda, propriedade, ocupação, acesso a recursos e relações de poder.'],
+      'Globalização, tecnologia, política e movimentos sociais': ['Uma camiseta pode ser desenhada em um país, fabricada em outro e vendida mundialmente: isso exemplifica cadeias globais de produção.', 'Redes sociais facilitam mobilização política, mas também podem acelerar desinformação e discursos de ódio.', 'Movimentos sociais organizam pessoas em torno de reivindicações, como moradia, educação, direitos trabalhistas e proteção ambiental.'],
+      'Norma, variação linguística e formação de palavras': ['“A gente vai” é comum na fala cotidiana; em textos formais, pode-se preferir “nós vamos”, conforme o contexto.', 'A palavra infelizmente é formada por derivação: in- (prefixo) + feliz (radical/base) + -mente (sufixo).', 'Adequação linguística significa escolher registro e variedade conforme interlocutor, situação e objetivo, sem tratar variedades como inferiores.'],
+      'Sintaxe: coordenação, subordinação e período composto': ['“Estudei e fiz os exercícios”: oração coordenada aditiva. “Fiquei em casa porque chovia”: oração subordinada adverbial causal.', 'Em “Embora estivesse cansado, continuou”, embora introduz uma ideia de concessão.', 'Sujeito é sobre quem se declara algo; predicado é aquilo que se declara sobre o sujeito.'],
+      'Gêneros textuais, argumentação e leitura crítica': ['Uma notícia prioriza informar; um editorial defende uma posição; um anúncio busca persuadir o público.', 'Em um argumento, a tese é a ideia defendida e os argumentos são as razões e evidências que a sustentam.', 'Ao ler uma postagem, confira autoria, data, fonte dos dados, contexto e se há evidências para a afirmação.'],
+      'Literatura: Barroco, Realismo e contexto histórico': ['No Barroco, um texto pode explorar conflito entre fé e desejo, antíteses e linguagem elaborada.', 'No Realismo, observe ironia, crítica social, análise psicológica e personagens contraditórios.', 'Relacionar obra e contexto histórico ajuda a entender por que certos temas e conflitos aparecem no texto.'],
+      'Inglês: gêneros, inferência, coesão e ponto de vista': ['Em um anúncio, imperativos como “Buy now” indicam tentativa de convencer o leitor a comprar.', '“However” introduz contraste; “therefore” introduz consequência; “although” significa embora.', 'Para descobrir o ponto de vista, observe adjetivos avaliativos, verbos de opinião e quais informações o autor escolhe destacar.'],
+      'Filosofia: conhecimento, ética e política': ['Uma afirmação como “todo mundo sabe” não é prova: a filosofia pede justificativas e análise dos argumentos.', 'Uma decisão ética pode ser analisada pelo dever envolvido, pelas consequências e pelas virtudes demonstradas.', 'Em um debate sobre liberdade e segurança, identifique os valores em conflito e apresente razões para cada posição.']
+    };
+    const GL2 = {"Geometria espacial": "Ab: área da base (m², cm²); Al: área lateral (m², cm²); At: área total (m², cm²); V: volume (m³, cm³ ou litros); a, b: lados da base (m, cm); h: altura (m, cm); r: raio da base (m, cm); g: geratriz, a “lateral inclinada” do cone (m, cm); π: número pi, aproximadamente 3,14", "PA e PG": "a₁: primeiro termo da sequência; aₙ: termo que ocupa a posição n; n: posição do termo (ou quantidade de termos); r: razão da PA, o número somado a cada passo; q: razão da PG, o número multiplicado a cada passo; Sₙ: soma dos n primeiros termos", "Análise combinatória": "n: total de elementos disponíveis; p: quantos serão escolhidos; !: fatorial, produto de n até 1 (4! = 4·3·2·1 = 24); Pₙ: permutação, todas as ordens possíveis de n itens; A(n,p): arranjo, escolhe p de n e a ordem importa; C(n,p): combinação, escolhe p de n e a ordem não importa", "Funções: 1º grau, exponencial e log": "f(x): valor da função, o “y”; x: variável de entrada; a: inclinação da reta (quanto y muda quando x sobe 1); b: valor inicial (onde a reta corta o eixo y); bˣ: potência com x no expoente, da função exponencial; log_b(N): expoente ao qual elevo a base b para chegar em N", "Trigonometria": "θ: ângulo analisado (graus); sen: seno = oposto ÷ hipotenusa; cos: cosseno = adjacente ÷ hipotenusa; tg: tangente = oposto ÷ adjacente; hip: hipotenusa, maior lado, oposto ao ângulo de 90°; cat: cateto, cada lado que forma o ângulo reto; a, b, c: lados do triângulo; R: raio da circunferência que passa pelos 3 vértices", "Geometria plana e semelhança": "b: base (m, cm); B: base maior do trapézio (m, cm); h: altura, perpendicular à base (m, cm); D: diagonal maior do losango; d: diagonal menor do losango; r: raio do círculo (m, cm); R: raio maior, no cálculo da coroa; π: pi, aproximadamente 3,14; a: hipotenusa; m, n: projeções dos catetos sobre a hipotenusa; Área: sempre em unidade ao quadrado (m², cm²)", "Termologia e calorimetria": "Q: quantidade de calor (cal ou J); m: massa (g ou kg); c: calor específico, calor para 1 g subir 1 °C (cal/g°C); ΔT: variação de temperatura, final − inicial (°C ou K); L: calor latente, calor por grama para mudar de estado (cal/g); C: temperatura em graus Celsius (°C); F: temperatura em graus Fahrenheit (°F); K: kelvin, medida de temperatura absoluta (K = °C + 273)", "Gases e termodinâmica": "P: pressão (atm ou Pa); V: volume (L ou m³); n: quantidade de matéria (mol); R: constante dos gases (0,082 atm·L/mol·K); T: temperatura absoluta, sempre em kelvin (K); ΔU: variação da energia interna (J); Q: calor recebido pelo gás (J); W: trabalho realizado pelo gás (J); η: rendimento, fração do calor que vira trabalho (0 a 1 ou %); T_fria, T_quente: temperaturas das fontes, em kelvin", "Óptica geométrica": "f: distância focal, onde os raios convergem (cm ou m); p: distância do objeto ao espelho (cm ou m); p′: distância da imagem ao espelho (cm ou m); R: raio de curvatura do espelho (f = R/2); A: aumento linear da imagem (sem unidade); n: índice de refração do meio (sem unidade); c: velocidade da luz no vácuo (300 000 km/s); v: velocidade da luz no meio (km/s)", "Ondas e som": "v: velocidade da onda (m/s); λ: comprimento de onda, distância entre duas cristas (m); f: frequência, oscilações por segundo (Hz); T: período, tempo de uma oscilação (s)", "Estequiometria e mol": "n: quantidade de matéria (mol); m: massa da amostra (g); M: massa molar, massa de 1 mol (g/mol); 6·10²³: número de Avogadro, partículas em 1 mol; 22,4 L: volume de 1 mol de gás nas CNTP (L/mol)", "Equilíbrio, pH e cinética": "Kc: constante de equilíbrio (sem unidade); [ ]: concentração em mol por litro (mol/L); pH: medida de acidez, de 0 a 14; [H⁺]: concentração de íons hidrogênio (mol/L); pOH: medida de basicidade (pOH = 14 − pH); Kw: produto iônico da água (10⁻¹⁴ a 25 °C)", "Termoquímica e eletroquímica": "ΔH: variação de entalpia, calor trocado a pressão constante (kJ); H: entalpia, energia armazenada na substância (kJ); E°: potencial-padrão de redução (V, volts); ddp: diferença de potencial da pilha (V); α, β, γ: radiações alfa, beta e gama", "Conjuntos numéricos, razão e proporcionalidade": "ℕ, ℤ, ℚ, ℝ: conjuntos dos naturais, inteiros, racionais e reais; a, b, c, d: termos de uma razão ou proporção; p: taxa percentual (%); a × 10ⁿ: notação científica, com a entre 1 e 10; n: expoente, quantas casas a vírgula andou; valor inicial: base de comparação da variação percentual", "Funções quadráticas, sistemas lineares e gráficos": "a, b, c: coeficientes de ax² + bx + c (a ≠ 0); x: variável de entrada; Δ: discriminante, Δ = b² − 4ac (diz quantas raízes existem); xᵥ: posição x do vértice; yᵥ: valor y do vértice (máximo ou mínimo); x, y (sistema): incógnitas a descobrir", "Probabilidade e estatística": "P(A): probabilidade do evento A (de 0 a 1, ou 0% a 100%); Ω: espaço amostral, todos os resultados possíveis; Aᶜ: A não acontecer (evento complementar); casos favoráveis: resultados que interessam; casos possíveis: total de resultados; x̄: média aritmética; n: quantidade de dados; f: frequência, quantas vezes o valor aparece", "Termologia: temperatura, calor e mudanças de estado": "Q: calor trocado (cal ou J); m: massa (g ou kg); c: calor específico (cal/g°C); ΔT: variação de temperatura (°C ou K); L: calor latente (cal/g); K: kelvin, medida de temperatura absoluta (K = °C + 273); C: temperatura em Celsius (°C); L₀: comprimento inicial (m); ΔL: variação do comprimento (m); α: coeficiente de dilatação linear (1/°C); γ: coeficiente de dilatação volumétrica (1/°C)", "Gases, trabalho e máquinas térmicas": "P: pressão (Pa ou atm); V: volume (m³ ou L); T: temperatura absoluta, em kelvin (K); n: quantidade de matéria (mol); R: constante dos gases (8,31 J/mol·K); W: trabalho realizado pelo gás (J); ΔU: variação da energia interna (J); Q: calor trocado (J); Qₕ: calor recebido da fonte quente (J); Q_f: calor rejeitado à fonte fria (J); η: rendimento (0 a 1 ou %)", "Óptica geométrica: espelhos, refração e instrumentos": "f: distância focal (cm ou m); p: distância do objeto (cm ou m); p′: distância da imagem (cm ou m); A: aumento linear, A = i/o (sem unidade); i, o: altura da imagem e do objeto; n: índice de refração (sem unidade); c: velocidade da luz no vácuo (300 000 km/s); v: velocidade da luz no meio (km/s); i, r (Snell): ângulos de incidência e refração, medidos a partir da normal (graus)", "Ondulatória, som e acústica": "v: velocidade de propagação (m/s); λ: comprimento de onda (m); f: frequência (Hz); T: período (s); A: amplitude, “altura” da onda (m); β: nível sonoro (dB, decibéis); I: intensidade do som (W/m²); I₀: menor intensidade audível (10⁻¹² W/m²)", "Matéria, misturas e separação de materiais": "d: densidade (g/cm³ ou kg/m³); m: massa (g ou kg); V: volume (cm³, mL ou L); soluto: o que é dissolvido; solvente: o que dissolve (geralmente a água)", "Estrutura atômica, fórmulas e funções inorgânicas": "Z: número atômico = número de prótons; A: número de massa = prótons + nêutrons; n: número de nêutrons (n = A − Z); p⁺: próton, carga positiva; e⁻: elétron, carga negativa; pH: acidez (abaixo de 7 ácido, 7 neutro, acima de 7 básico)", "Oxirredução, eletrólise e radioatividade": "Nox: número de oxidação, a “carga” que o átomo parece ter; E°: potencial-padrão (V, volts); t: tempo decorrido (s, dias ou anos); t½: meia-vida, tempo para a amostra cair à metade; N₀: quantidade inicial; N: quantidade restante; α: perde 2 prótons e 2 nêutrons (A cai 4, Z cai 2); β: Z sobe 1 e A não muda; γ: radiação sem massa, não muda A nem Z", "Economia, globalização e população": "hab/km²: habitantes por quilômetro quadrado (densidade demográfica); ‰: “por mil” habitantes, usado em natalidade e mortalidade; crescimento vegetativo: natalidade − mortalidade (‰)", "Meio ambiente, energia e cartografia": "1:n: escala, cada 1 cm no mapa vale n cm na realidade; km: para converter cm em km, divida por 100 000; latitude: distância ao Equador, norte/sul (0° a 90°); longitude: distância a Greenwich, leste/oeste (0° a 180°)", "Células, DNA e genética": "A, a: alelo dominante (maiúscula) e recessivo (minúscula); AA, Aa, aa: genótipos possíveis; P: probabilidade = casos favoráveis ÷ casos possíveis; AaBb: duas características juntas, forma 4 tipos de gameta"};
+    const EXPL = {"Ecologia: populações, energia e produtividade": "Pense numa cidade: <b>habitat</b> é o endereço da espécie e <b>nicho</b> é a “profissão” (o que come, onde dorme, com quem interage). A sequência <b>população → comunidade → ecossistema → biosfera</b> vai de “uma espécie” até “o planeta inteiro”, como bairro → cidade → estado → país.", "Estequiometria e mol": "Mol é só uma unidade de contagem, como “dúzia”. Em 2 H₂ + O₂ → 2 H₂O, os números dizem “2 de H₂ + 1 de O₂ dão 2 de água”. Para resolver: <b>1)</b> balanceie; <b>2)</b> converta gramas em mol com n = m/M; <b>3)</b> compare os mols pela proporção da equação; <b>4)</b> volte para gramas.", "Funções quadráticas, sistemas lineares e gráficos": "O caminho de uma bola chutada é uma parábola. O <b>vértice</b> é o ponto mais alto (se a &lt; 0) ou mais baixo (se a &gt; 0). O Δ conta as raízes: Δ &gt; 0 → cruza o eixo x em 2 pontos; Δ = 0 → toca em 1; Δ &lt; 0 → não cruza.", "Probabilidade e estatística": "Probabilidade é “quantas chances boas ÷ quantas chances existem”. Dado par: {2, 4, 6} em 6 faces → 3/6 = 1/2. A <b>média</b> é o valor se todos fossem iguais, a <b>mediana</b> é o do meio e a <b>moda</b> é o que mais se repete.", "Termologia e calorimetria": "Temperatura é “o quanto está agitado”; calor é a energia que viaja do quente para o frio. Em Q = m·c·ΔT, quanto mais massa e mais graus a subir, mais calor é preciso; o <b>c</b> mostra o quanto o material “resiste” a esquentar (a água resiste muito).", "Equilíbrio, pH e cinética": "O pH é uma régua de acidez de 0 a 14 e é logarítmica: pH 3 é 10 vezes mais ácido que pH 4 e 100 vezes mais que pH 5. Exemplo: [H⁺] = 10⁻³ mol/L → pH = 3."};
+    const formulaGlossary = {
+      'Geometria espacial': 'Ab = área da base; Al = área lateral; At = área total; V = volume; a, b = lados da base; h = altura; r = raio; g = geratriz; π ≈ 3,14.',
+      'PA e PG': 'a₁ = primeiro termo; aₙ = termo na posição n; n = posição/quantidade de termos; r = razão da PA (diferença constante); q = razão da PG (fator constante); Sₙ = soma dos n primeiros termos.',
+      'Análise combinatória': 'n = total de elementos; p = quantidade escolhida; ! = fatorial; P = permutação; A = arranjo (ordem importa); C = combinação (ordem não importa).',
+      'Funções: 1º grau, exponencial e log': 'f(x) = valor da função; x = variável de entrada; a = inclinação ou taxa; b = valor inicial; na exponencial, a = valor inicial e b = fator de crescimento; log_b(N), b = base e N = número cujo logaritmo se procura.',
+      'Trigonometria': 'θ = ângulo; sen = seno; cos = cosseno; tg = tangente; hip = hipotenusa; cat = cateto; a, b, c = lados do triângulo; R = raio da circunferência circunscrita.',
+      'Geometria plana e semelhança': 'b = base; B = base maior; h = altura; D e d = diagonais; r = raio; R = raio maior; a = hipotenusa na relação métrica indicada; m e n = projeções dos catetos.',
+      'Termologia e calorimetria': 'Q = quantidade de calor; m = massa; c = calor específico; ΔT = variação de temperatura; L = calor latente; C = Celsius; F = Fahrenheit; K = kelvin.',
+      'Gases e termodinâmica': 'P = pressão; V = volume; n = quantidade de matéria; R = constante dos gases; T = temperatura em kelvin; ΔU = variação da energia interna; Q = calor; W = trabalho; η = rendimento.',
+      'Óptica geométrica': 'f = distância focal; p = distância do objeto; p′ = distância da imagem; R = raio de curvatura; A = aumento linear; n = índice de refração; c = velocidade da luz no vácuo; v = velocidade no meio.',
+      'Ondas e som': 'v = velocidade da onda; λ = comprimento de onda; f = frequência; T = período.',
+      'Estequiometria e mol': 'n = quantidade de matéria (mol); m = massa (g); M = massa molar (g/mol); 6·10²³ = número aproximado de partículas em 1 mol.',
+      'Equilíbrio, pH e cinética': 'Kc = constante de equilíbrio; [ ] = concentração molar; pH = medida de acidez; [H⁺] = concentração de íons hidrogênio; pOH = medida relacionada a OH⁻; Kw = produto iônico da água.',
+      'Termoquímica e eletroquímica': 'ΔH = variação de entalpia; H = entalpia; E° = potencial-padrão; ddp = diferença de potencial elétrico; α, β e γ = radiações alfa, beta e gama.',
+      'Conjuntos numéricos, razão e proporcionalidade': 'a, b, c e d = termos de uma razão ou proporção; p = taxa percentual; valor inicial = base usada para calcular a variação percentual; n = expoente na notação científica.',
+      'Funções quadráticas, sistemas lineares e gráficos': 'a, b e c = coeficientes da função quadrática; x = variável; Δ = discriminante; xᵥ = coordenada x do vértice; yᵥ = coordenada y do vértice; nas equações do sistema, x e y são as incógnitas.',
+      'Probabilidade e estatística': 'P = probabilidade; casos favoráveis = resultados desejados; casos possíveis = total de resultados; x̄ = média; n = quantidade de dados; f = frequência; mediana = valor central dos dados ordenados.',
+      'Termologia: temperatura, calor e mudanças de estado': 'Q = calor trocado; m = massa; c = calor específico; ΔT = variação de temperatura; L = calor latente; T = temperatura; K = kelvin; C = Celsius; F = Fahrenheit.',
+      'Gases, trabalho e máquinas térmicas': 'P = pressão; V = volume; T = temperatura absoluta em kelvin; n = quantidade de matéria; R = constante dos gases; W = trabalho; Qquente = calor recebido da fonte quente; η = rendimento.',
+      'Óptica geométrica: espelhos, refração e instrumentos': 'f = distância focal; p = distância do objeto ao espelho/lente; p′ = distância da imagem; R = raio de curvatura; n = índice de refração; θ = ângulo; c = velocidade da luz no vácuo; v = velocidade da luz no meio.',
+      'Ondulatória, som e acústica': 'v = velocidade de propagação; λ = comprimento de onda; f = frequência; T = período; A = amplitude da onda.',
+      'Matéria, misturas e separação de materiais': 'd = densidade; m = massa; V = volume; soluto = substância dissolvida; solvente = substância que dissolve.',
+      'Estrutura atômica, fórmulas e funções inorgânicas': 'Z = número atômico (prótons); A = número de massa (prótons + nêutrons); n = número de nêutrons; e⁻ = elétron; p⁺ = próton.',
+      'Oxirredução, eletrólise e radioatividade': 'Nox = número de oxidação; t = tempo decorrido; t½ = meia-vida; N₀ = quantidade inicial; N = quantidade restante.'
+    };
+    L.forEach(lesson => {
+      const ex2 = EXPL[lesson.t]; if (ex2) lesson.h += `<section class="explain"><h2>💡 Entendendo melhor</h2><p>${ex2}</p></section>`;
+      const examples = practicalExamples[lesson.t];
+      if (examples) lesson.h += `<section class="practical"><h2>Exemplos práticos</h2><ul>${examples.map(x => `<li>${x}</li>`).join('')}</ul></section>`;
+      const glossary = GL2[lesson.t] || formulaGlossary[lesson.t];
+      if (glossary) lesson.h += `<section class="symbols"><h2>O que significam as letras e os símbolos?</h2><div class="legend">${glossary.split(";").map(s => {const m = s.trim().match(/^(.+?)(?: = |: )(.+)$/); return m ? `<div><b>${m[1]}</b><span>${m[2].replace(/\.$/, "")}</span></div>` : ""}).join("")}</div></section>`;
+    });
+
+    // Organização das aulas conforme os dias oficiais da prova.
+
+    const dayOf = {por: 10, ing: 10, bio: 10, fis: 10, qui: 10, mat: 11, his: 11, geo: 11, soc: 11, fil: 11};
+    const dayNames = {10: 'Linguagens e Ciências da Natureza', 11: 'Matemática e Ciências Humanas'};
+    const subjectOrder = {por: 0, ing: 1, bio: 2, fis: 3, qui: 4, mat: 0, his: 1, geo: 2, soc: 3, fil: 4};
+    L.forEach((lesson, index) => lesson._originalIndex = index);
+    L.sort((a, b) => dayOf[a.s] - dayOf[b.s] || subjectOrder[a.s] - subjectOrder[b.s] || a._originalIndex - b._originalIndex);
+    const $ = s => document.querySelector(s);
+    let cur = 0, mode = 'all', sv = {}, qs;
+    try {sv = JSON.parse(localStorage.getItem('p2dias') || '{}')} catch (e) { }
+    const courses = [
+      ['ia', 'Inteligência Artificial / Ciência da Computação'], ['eng', 'Engenharias'], ['med', 'Medicina / Saúde'], ['dir', 'Direito'], ['eco', 'Economia / Administração'], ['hum', 'Psicologia / Ciências Humanas'], ['com', 'Comunicação / Jornalismo'], ['arq', 'Arquitetura / Design'], ['agr', 'Agronomia / Veterinária'], ['edu', 'Educação / Pedagogia'], ['bio', 'Biologia / Ciências da Natureza'], ['out', 'Ainda estou decidindo']
+    ];
+    const rankings = {
+      ia: ['mat', 'fis', 'ing', 'por', 'qui', 'bio', 'geo', 'fil', 'soc', 'his'],
+      eng: ['mat', 'fis', 'qui', 'ing', 'por', 'geo', 'bio', 'his', 'fil', 'soc'],
+      med: ['bio', 'qui', 'por', 'ing', 'fis', 'mat', 'soc', 'fil', 'geo', 'his'],
+      dir: ['por', 'his', 'fil', 'soc', 'geo', 'ing', 'mat', 'bio', 'qui', 'fis'],
+      eco: ['mat', 'geo', 'his', 'por', 'ing', 'soc', 'fil', 'fis', 'qui', 'bio'],
+      hum: ['fil', 'soc', 'his', 'por', 'geo', 'ing', 'bio', 'mat', 'qui', 'fis'],
+      com: ['por', 'his', 'soc', 'ing', 'geo', 'fil', 'mat', 'bio', 'qui', 'fis'],
+      arq: ['mat', 'fis', 'geo', 'por', 'his', 'ing', 'qui', 'bio', 'soc', 'fil'],
+      agr: ['bio', 'qui', 'geo', 'mat', 'fis', 'por', 'ing', 'soc', 'his', 'fil'],
+      edu: ['por', 'his', 'soc', 'fil', 'geo', 'bio', 'ing', 'mat', 'qui', 'fis'],
+      bio: ['bio', 'qui', 'mat', 'fis', 'geo', 'por', 'ing', 'soc', 'fil', 'his'],
+      out: ['por', 'mat', 'ing', 'bio', 'fis', 'qui', 'his', 'geo', 'soc', 'fil']
+    };
+    const subjectKeys = ['mat', 'por', 'ing', 'bio', 'fis', 'qui', 'his', 'geo', 'soc', 'fil'];
+    let selectedCourses = [];
+    try {selectedCourses = JSON.parse(localStorage.getItem('p2courses') || '[]')} catch (e) { }
+    function visibleIndices() {return L.map((l, i) => i).filter(i => mode === 'all' || dayOf[L[i].s] === +mode)}
+    function subjectPriority() {
+      const total = {}; subjectKeys.forEach(k => total[k] = 0);
+      const chosen = selectedCourses.length ? selectedCourses : ['out'];
+      chosen.forEach(id => {const r = rankings[id] || rankings.out; r.forEach((k, i) => {if (total[k] !== undefined) total[k] += i + 1})});
+      return subjectKeys.slice().sort((a, b) => total[a] - total[b]);
+    }
+    function renderNav() {
+      const order = subjectPriority(), indices = visibleIndices(); let html = '';
+      order.forEach((key, rank) => {
+        const lessons = indices.filter(i => L[i].s === key); if (!lessons.length) return;
+        const subject = subs[key], open = lessons.includes(cur);
+        html += `<section class="subject-group ${open ? 'open' : ''}"><button class="subject-toggle ${lessons.every(i => sv[i] != null) ? 'alldone' : ''}" data-subject="${key}" aria-expanded="${open}"><i class="dot" style="background:${subject[1]}"></i>${subject[0]}<span class="count">${lessons.length} aulas</span><span class="chev">⌄</span></button><div class="subject-lessons">${lessons.map(i => `<a class="subject-link ${i === cur ? 'current' : ''} ${sv[i] != null ? 'done' : ''}" href="#${i}">${L[i].t}</a>`).join('')}</div></section>`;
+      });
+      $('#nav').innerHTML = html;
+      $('#nav').querySelectorAll('.subject-toggle').forEach(btn => btn.addEventListener('click', () => btn.parentElement.classList.toggle('open')));
+      $('#courseSummary').textContent = selectedCourses.length ? selectedCourses.map(id => courses.find(c => c[0] === id)?.[1]).filter(Boolean).join(' · ') : 'Perfil geral: todas as disciplinas equilibradas.';
+      renderFinal(); if ($('#db')) $('#db').innerHTML = sv[cur] != null ? `<span class="done-badge">✓ Quiz concluído · ${sv[cur]}/${sv[cur + 't']}</span>` : '';
+      const done = indices.filter(i => sv[i] != null).length; $('#pr').textContent = `${done}/${indices.length} aulas concluídas`;
+    }
+    function renderTabs() {
+      document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+      $('#pageTitle').textContent = mode === 'all' ? 'Conteúdo completo' : `Dia ${mode} · ${mode === '10' ? '10/11' : '11/11'}`;
+      $('#pageDesc').textContent = mode === 'all' ? 'Todas as disciplinas e aulas da 2ª série, reunidas em uma única trilha.' : mode === '10' ? 'Linguagens e Ciências da Natureza. Exibindo somente as aulas previstas para este dia.' : 'Matemática e Ciências Humanas. Exibindo somente as aulas previstas para este dia.'
+    }
+    function show() {
+      const l = L[cur], c = subs[l.s][1], day = dayOf[l.s]; qs = l.q(); $('#m').style.setProperty('--c', c);
+      $('#m').innerHTML = `<div class="mb-2"><span class="tag" style="--c:${c}">${subs[l.s][0]}</span> <span class="badge text-bg-light border">Dia ${day} · ${day === 10 ? '10/11' : '11/11'}</span> <span id="db"></span></div><h1>${l.t}</h1>${l.h}<section class="qz"><h2 style="--c:${c}">Quiz de revisão</h2><p>Responda para verificar o que aprendeu nesta aula.</p><div id="qb"></div><button class="btn-b mt-2" id="ck">Corrigir respostas</button> <button class="btn-o mt-2" id="rf">Refazer quiz</button><div id="res" class="fs-5 fw-bold mt-3"></div></section><div class="d-flex justify-content-between mt-4">${previousLink()}${nextLink()}</div>`;
+      formatFractions(); prettify();
+      quiz(); $('#ck').onclick = check; $('#rf').onclick = () => {qs = l.q(); quiz()}; renderNav(); renderTabs();
+    }
+
+    function formatFractions() {
+      document.querySelectorAll('#m .f').forEach(box => {
+        let source = box.innerHTML.replace(/×/g, '·');
+        source = source.replace(/(\([^()]*\)(?:·[^\s<]+)?|[^\s<]+)\s*\/\s*(\([^()]*\)|[^\s<]+)/g, (match, num, den) => `<span class="frac"><span>${num}</span><span>${den}</span></span>`);
+        box.innerHTML = source;
+      });
+    }
+
+    function prettify() {
+      const verbs = 'é|são|reúne|inclui|forma|ocorre|tem|têm|usa|separa|indica|significa|estuda|envolve|depende|libera|liberam|produz|surge|surgem|diminui|aumenta';
+      document.querySelectorAll('#m p').forEach(p => {
+        if (p.closest('.qz,.symbols,.ok,.wr,.explain,.practical,.gc')) return;
+        const h = p.innerHTML.replace(/&(#?\w+);/g, '&$1§');
+        if (!h.includes(';')) return;
+        const parts = h.split(/;\s*/).map(s => s.replace(/§/g, ';').trim()).filter(Boolean);
+        if (parts.length < 2) return;
+        const ul = document.createElement('ul'); ul.className = 'semi';
+        ul.innerHTML = parts.map(s => {
+          s = s.replace(/^([a-zà-ú])(?=[a-zà-ú]{2})/, m => m.toUpperCase());
+          if (!/<b/.test(s)) s = s.replace(new RegExp('^([^,.:<]{2,38}?)\\s+(' + verbs + ')\\s'), '<b class="t">$1</b> $2 ');
+          return `<li>${s}</li>`;
+        }).join('');
+        p.replaceWith(ul);
+      });
+    }
+    function renderFinal() {
+      let hit = 0, tot = 0, done = 0, by = {};
+      L.forEach((l, i) => {const o = by[l.s] || (by[l.s] = [0, 0, 0, 0]); o[3]++; if (sv[i] != null) {o[0] += sv[i]; o[1] += sv[i + 't']; o[2]++; hit += sv[i]; tot += sv[i + 't']; done++}});
+      const all = done === L.length, pct = tot ? Math.round(hit * 100 / tot) : 0, f = $('#final');
+      f.className = 'final' + (all ? ' all' : '');
+      f.innerHTML = `<div class="fh"><span>${all ? '🏆 Todos os quizzes concluídos!' : '📊 Seu desempenho nos quizzes'}</span><small>${done} de ${L.length} aulas concluídas</small></div><div class="fn"><b>${hit}</b> acertos de ${tot} questões respondidas${tot ? `<em>${pct}%</em>` : ''}</div><div class="fg">${subjectKeys.filter(k => by[k]).map(k => {const o = by[k], p = o[1] ? Math.round(o[0] * 100 / o[1]) : 0; return `<div><div class="fs"><span>${subs[k][0]}</span><span>${o[0]}/${o[1]} · ${o[2]}/${o[3]} aulas</span></div><div class="bar"><i style="width:${p}%;--c:${subs[k][1]}"></i></div></div>`}).join('')}</div>`;
+    }
+    function previousLink() {const ids = visibleIndices(), p = ids[ids.indexOf(cur) - 1]; return p !== undefined ? `<a class="btn-o" href="#${p}">← Aula anterior</a>` : '<span></span>'}
+    function nextLink() {const ids = visibleIndices(), n = ids[ids.indexOf(cur) + 1]; return n !== undefined ? `<a class="btn-b" href="#${n}">Próxima aula →</a>` : ''}
+    function quiz() {$('#res').textContent = ''; $('#qb').innerHTML = qs.map((q, i) => `<div class="qq"><p><b>${i + 1}.</b> ${q.t}</p>${sh(q.o).map(o => `<label class="op"><input type="radio" name="q${i}" value="${o}"> ${o}</label>`).join('')}<div class="ex" hidden>${q.e ? '<b>Explicação:</b> ' + q.e : ''}</div></div>`).join('')}
+    function check() {
+      let ok = 0; qs.forEach((q, i) => {const bx = $('#qb').children[i]; bx.querySelectorAll('.op').forEach(l => {const v = l.querySelector('input'); l.classList.remove('g', 'b'); if (v.value == q.a) l.classList.add('g'); else if (v.checked) l.classList.add('b'); if (v.checked && v.value == q.a) ok++}); bx.querySelector('.ex').hidden = false});
+      $('#res').textContent = `Você acertou ${ok} de ${qs.length}. ${ok === qs.length ? 'Excelente. Pode seguir.' : ok >= qs.length / 2 ? 'Revise os pontos que errou.' : 'Releia a aula e tente novamente.'}`; sv[cur] = ok; sv[cur + 't'] = qs.length; try {localStorage.setItem('p2dias', JSON.stringify(sv))} catch (e) { } renderNav()
+    }
+    function route() {const ids = visibleIndices(); let wanted = +location.hash.slice(1); if (!location.hash || !ids.includes(wanted)) wanted = ids[0] ?? 0; cur = wanted; show()}
+    function setMode(next) {mode = next; const ids = visibleIndices(); if (!ids.includes(cur)) cur = ids[0] ?? 0; history.replaceState(null, '', `#${cur}`); show()}
+    document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => b.dataset.view ? openView(b.dataset.view) : (hideView(), setMode(b.dataset.mode))));
+    function openCourseModal() {const box = $('#courseChoices'); box.innerHTML = courses.map(([id, label]) => `<label class="course-option"><input type="checkbox" value="${id}" ${selectedCourses.includes(id) ? 'checked' : ''}><span>${label}</span></label>`).join(''); $('#courseModal').classList.add('show')}
+    function saveCourses() {const picked = [...$('#courseChoices').querySelectorAll('input:checked')].map(x => x.value); if (!picked.length) {$('#courseChoices').style.outline = '2px solid #d97706'; return } selectedCourses = picked; try {localStorage.setItem('p2courses', JSON.stringify(selectedCourses))} catch (e) { } $('#courseModal').classList.remove('show'); renderNav()}
+    $('#editCourses').onclick = openCourseModal; $('#saveCourses').onclick = saveCourses;
+    const savedTheme = localStorage.getItem('p2theme'); if (savedTheme === 'dark') document.body.classList.add('dark');
+    function updateThemeIcon() {$('#themeToggle').textContent = document.body.classList.contains('dark') ? '☀' : '☾'}
+    $('#themeToggle').onclick = () => {document.body.classList.toggle('dark'); try {localStorage.setItem('p2theme', document.body.classList.contains('dark') ? 'dark' : 'light')} catch (e) { } updateThemeIcon()}; updateThemeIcon();
+    addEventListener('hashchange', route); route(); if (!selectedCourses.length) openCourseModal();
+  </script>
+  <div class="onboarding" id="userModal" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <div class="modal-kicker">IDENTIFICAÇÃO</div>
+      <h2>Quem está estudando?</h2>
+      <p>Informe seu nome e e-mail para entrar no ranking. Não precisa de senha.</p>
+      <input id="uName" class="form-control mb-2" placeholder="Seu nome" maxlength="40">
+      <input id="uMail" type="email" class="form-control mb-2" placeholder="seu@email.com">
+      <div id="uErr" class="text-danger small"></div>
+      <div class="modal-footer"><span></span><button class="primary-btn" id="uSave">Entrar <span>→</span></button></div>
+    </div>
+  </div>
+  <script>
+(function () {
+  const FIREBASE_CONFIG = {apiKey: '', authDomain: '', projectId: '', appId: ''}; // cole aqui a config do seu projeto Firebase
+  const load = (k, d) => {try {return JSON.parse(localStorage.getItem(k) || '') || d} catch (e) {return d}};
+  const save = (k, v) => {try {localStorage.setItem(k, JSON.stringify(v))} catch (e) { }};
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const h53 = s => {let a = 0xdeadbeef, b = 0x41c6ce57; for (let i = 0; i < s.length; i++) {const c = s.charCodeAt(i); a = Math.imul(a ^ c, 2654435761); b = Math.imul(b ^ c, 1597334677)} a = Math.imul(a ^ (a >>> 16), 2246822507) ^ Math.imul(b ^ (b >>> 13), 3266489909); b = Math.imul(b ^ (b >>> 16), 2246822507) ^ Math.imul(a ^ (a >>> 13), 3266489909); return (4294967296 * (2097151 & b) + (a >>> 0)).toString(36)};
+  const defCuts = {ia: 70, eng: 72, med: 85, dir: 78, eco: 68, hum: 62, com: 64, arq: 66, agr: 60, edu: 55, bio: 65, out: 50};
+  let user = load('p2user', null), cuts = Object.assign({}, defCuts, load('p2cuts', {})), notes = load('p2notes', {}), best = load('p2mega', null);
+  let megaQs = null, ans = [], done = false, db = null;
+
+  function fb() {if (db) return db; try {if (FIREBASE_CONFIG.projectId && window.firebase) {firebase.initializeApp(FIREBASE_CONFIG); db = firebase.firestore()}} catch (e) { } return db}
+  async function register() {
+    if (!user) return; const d = fb();
+    if (d) {try {const r = d.collection('ranking').doc(user.id), s = await r.get(); if (!s.exists) await r.set({name: user.name, best: 0, hits: 0, total: 0, t: Date.now()}); else await r.set({name: user.name}, {merge: true}); return} catch (e) { }}
+    const l = load('p2rank', {}); l[user.id] = Object.assign({best: 0, hits: 0, total: 0}, l[user.id], {name: user.name}); save('p2rank', l);
+  }
+  async function push(data) {
+    if (!user) return; const rec = Object.assign({name: user.name, t: Date.now()}, data), d = fb();
+    if (d) {try {await d.collection('ranking').doc(user.id).set(rec, {merge: true}); return} catch (e) { }}
+    const l = load('p2rank', {}); l[user.id] = Object.assign(l[user.id] || {}, rec); save('p2rank', l);
+  }
+  async function getRank() {
+    const d = fb();
+    if (d) {try {const s = await d.collection('ranking').orderBy('best', 'desc').limit(50).get(); return {online: true, rows: s.docs.map(x => Object.assign({id: x.id}, x.data()))}} catch (e) { }}
+    return {online: false, rows: Object.entries(load('p2rank', {})).map(([id, v]) => Object.assign({id}, v)).sort((a, b) => (b.best || 0) - (a.best || 0))};
+  }
+
+  const erf = x => {const t = 1 / (1 + .3275911 * Math.abs(x)), y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - .284496736) * t + .254829592) * t * Math.exp(-x * x); return x >= 0 ? y : -y};
+  const top = p => Math.max(1, Math.round(100 - 50 * (1 + erf((p - 50) / 15 / Math.SQRT2))));
+  const chosen = () => selectedCourses.length ? selectedCourses : ['out'];
+  const cname = id => courses.find(c => c[0] === id)[1];
+  function verdict(p) {
+    return `<div class="xcards">${chosen().map(id => {const c = cuts[id], ok = p >= c; return `<div class="xc ${ok ? 'ok2' : 'no2'}"><b>${cname(id)}</b><span>Nota de corte (treino): ${c}%</span><span>${ok ? '✅ Você passaria' : '❌ Faltam ' + (c - p) + ' pontos %'}</span></div>`}).join('')}</div><p class="small mt-2">Posição média estimada: entre os <b>${top(p)}%</b> melhores (${p}% de acerto). Estimativa estatística, assumindo média de 50% e desvio de 15 pontos entre os candidatos.</p>`;
+  }
+
+  function pctNow() {
+    const v = Object.keys(subs).map(k => notes[k]).filter(x => x !== '' && x != null && !isNaN(x));
+    return v.length ? {p: Math.round(v.reduce((a, b) => a + +b, 0) / v.length * 10), src: 'média das suas notas (' + v.length + ' matérias)'} : best ? {p: best.pct, src: 'seu melhor resultado no Mega Quiz'} : null;
+  }
+  const res = () => {const r = pctNow(); return r ? `<p>Base do cálculo: <b>${r.src}</b> = <b>${r.p}%</b></p>` + verdict(r.p) : '<p class="text-muted">Preencha suas notas ou faça o Mega Quiz para ver se você passaria.</p>'};
+  function viewNotas(x) {
+    x.innerHTML = `<h1>📝 Minhas notas</h1><p>Digite suas notas (0 a 10) em cada matéria. Se deixar tudo em branco, uso seu melhor resultado do Mega Quiz.</p><div class="xgrid">${Object.keys(subs).map(k => `<label>${subs[k][0]}<input class="form-control" type="number" min="0" max="10" step="0.1" data-n="${k}" value="${notes[k] ?? ''}"></label>`).join('')}</div><h2 style="--c:#2563eb">Notas de corte (treino)</h2><p class="small">Valores <b>estimados e não oficiais</b>, em % de acerto, para os cursos que você escolheu. Edite para a nota real do seu curso.</p><div class="xgrid">${chosen().map(id => `<label>${cname(id)}<input class="form-control" type="number" min="0" max="100" data-c="${id}" value="${cuts[id]}"></label>`).join('')}</div><h2 style="--c:#16a34a">Você passaria?</h2><div id="nres">${res()}</div>`;
+    x.oninput = e => {const t = e.target; if (t.dataset.n) {notes[t.dataset.n] = t.value; save('p2notes', notes)} else if (t.dataset.c) {cuts[t.dataset.c] = +t.value; save('p2cuts', cuts)} $('#nres').innerHTML = res()};
+  }
+
+  function buildMega() {
+    const out = [], rest = [], seen = new Set();
+    L.forEach(l => {const f = sh(l.q().map(q => Object.assign({s: l.s}, q))); if (f[0] && !seen.has(f[0].t)) {seen.add(f[0].t); out.push(f[0])} f.slice(1).forEach(q => rest.push(q))});
+    sh(rest).forEach(q => {if (out.length < 90 && !seen.has(q.t)) {seen.add(q.t); out.push(q)}});
+    return sh(out).slice(0, 90).map(q => Object.assign(q, {o: sh(q.o)}));
+  }
+  function viewMega(x) {
+    x.innerHTML = `<h1>🏆 Mega Quiz</h1><p>90 questões de todas as matérias, com pelo menos uma de cada aula. As questões mudam a cada tentativa.</p>${best ? `<div class="ok">Seu melhor resultado: <b>${best.hits}/${best.total}</b> (${best.pct}%)</div>` : ''}<button class="btn-b" id="mgo">${megaQs ? 'Voltar ao' : 'Começar o'} Mega Quiz</button><div id="mq" class="mt-3"></div>`;
+    $('#mgo').onclick = () => {if (!megaQs) {megaQs = buildMega(); ans = []; done = false} drawMega()};
+    if (megaQs) drawMega();
+  }
+  function drawMega() {
+    const m = $('#mq'), n = megaQs.length;
+    m.innerHTML = `<div id="mres"></div><p class="small fw-bold" id="mcount"></p>` + megaQs.map((q, i) => `<div class="qq"><p><span class="badge text-bg-light border">${subs[q.s][0]}</span> <b>${i + 1}.</b> ${q.t}</p>${q.o.map((o, j) => `<label class="op"><input type="radio" name="m${i}" value="${j}" ${ans[i] === j ? 'checked' : ''}> ${o}</label>`).join('')}<div class="ex" hidden>${q.e ? '<b>Explicação:</b> ' + q.e : ''}</div></div>`).join('') + `<button class="btn-b" id="mfin">Finalizar e ver resultado</button> <button class="btn-o" id="mnew">Novo Mega Quiz</button>`;
+    const cnt = () => $('#mcount').textContent = ans.filter(a => a != null).length + ' de ' + n + ' respondidas';
+    cnt(); $('#mbtn');
+    m.onchange = e => {const r = e.target; if (r.type === 'radio' && !done) {ans[+r.name.slice(1)] = +r.value; cnt()}};
+    $('#mfin').onclick = finishMega;
+    $('#mnew').onclick = () => {megaQs = buildMega(); ans = []; done = false; drawMega()};
+    if (done) markMega();
+  }
+  function markMega() {
+    megaQs.forEach((q, i) => {const bx = $('#mq').querySelectorAll('.qq')[i]; bx.querySelectorAll('.op').forEach((l, j) => {l.querySelector('input').disabled = true; if (q.o[j] === q.a) l.classList.add('g'); else if (ans[i] === j) l.classList.add('b')}); bx.querySelector('.ex').hidden = false});
+    $('#mres').innerHTML = megaQs.result || '';
+  }
+  async function finishMega() {
+    if (done) return; const un = megaQs.length - ans.filter(a => a != null).length;
+    if (un && !confirm(un + ' questões sem resposta serão contadas como erro. Finalizar?')) return;
+    done = true; let hits = 0, by = {};
+    megaQs.forEach((q, i) => {const ok = q.o[ans[i]] === q.a, b = by[q.s] || (by[q.s] = [0, 0]); b[1]++; if (ok) {hits++; b[0]++}});
+    const total = megaQs.length, pct = Math.round(hits * 100 / total);
+    if (!best || pct > best.pct) {best = {hits, total, pct}; save('p2mega', best); await push({best: pct, hits, total})}
+    megaQs.result = `<div class="final${pct >= 70 ? ' all' : ''}"><div class="fn"><b>${hits}</b> acertos de ${total} <em>${pct}%</em></div><div class="fg">${Object.keys(by).map(k => `<div><div class="fs"><span>${subs[k][0]}</span><span>${by[k][0]}/${by[k][1]}</span></div><div class="bar"><i style="width:${by[k][0] * 100 / by[k][1]}%;--c:${subs[k][1]}"></i></div></div>`).join('')}</div></div><h2 style="--c:#2563eb">Você passaria?</h2>${verdict(pct)}`;
+    markMega(); window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  async function viewRank(x) {
+    x.innerHTML = '<h1>🏅 Ranking</h1><p>Carregando…</p>';
+    const r = await getRank(), rows = r.rows.filter(v => v.total > 0);
+    x.innerHTML = `<h1>🏅 Ranking do Mega Quiz</h1>${r.online ? '' : '<div class="wr"><b>Modo local:</b> este ranking só mostra este navegador. Cole a configuração do Firebase no início do segundo script do arquivo para ficar online.</div>'}<p>Maiores índices de acerto no Mega Quiz (melhor tentativa de cada pessoa).</p>${rows.length ? `<table class="table"><tr><th>#</th><th>Nome</th><th>Acertos</th><th>Índice</th></tr>${rows.map((v, i) => `<tr class="${user && v.id === user.id ? 'table-success' : ''}"><td>${['🥇', '🥈', '🥉'][i] || i + 1}</td><td>${esc(v.name || 'Anônimo')}</td><td>${v.hits}/${v.total}</td><td><b>${v.best}%</b></td></tr>`).join('')}</table>` : '<p class="text-muted">Ninguém no ranking ainda. Faça o Mega Quiz!</p>'}`;
+  }
+
+  const hideEls = ['.intro', '#m', '#final'];
+  window.openView = v => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.view === v));
+    hideEls.forEach(s => $(s).style.display = 'none'); const x = $('#xv'); x.style.display = ''; x.oninput = x.onchange = null;
+    ({notas: viewNotas, mega: viewMega, rank: viewRank})[v](x); window.scrollTo({top: 0});
+  };
+  window.hideView = () => {$('#xv').style.display = 'none'; hideEls.forEach(s => $(s).style.display = ''); renderTabs()};
+  $('#nav').addEventListener('click', e => {if (e.target.closest('.subject-link')) hideView()});
+  addEventListener('hashchange', () => {if ($('#xv').style.display !== 'none') hideView()});
+
+  function refreshUser() {$('#uChip').textContent = '👤 ' + (user ? user.name.split(' ')[0] : 'Entrar')}
+  function openUser() {$('#userModal').classList.add('show'); if (user) {$('#uName').value = user.name; $('#uMail').value = user.email}}
+  $('#uChip').onclick = openUser;
+  $('#uSave').onclick = async () => {
+    const n = $('#uName').value.trim(), m = $('#uMail').value.trim().toLowerCase();
+    if (n.length < 2 || !/^\S+@\S+\.\S+$/.test(m)) {$('#uErr').textContent = 'Informe seu nome e um e-mail válido.'; return}
+    user = {name: n, email: m, id: h53(m)}; save('p2user', user); $('#uErr').textContent = ''; $('#userModal').classList.remove('show'); refreshUser(); await register();
+  };
+  refreshUser(); if (!user) openUser();
+  addEventListener('load', () => register());
+})();
+  </script>
+</body>
+
+</html>
